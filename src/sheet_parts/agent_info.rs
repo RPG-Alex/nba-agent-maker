@@ -62,9 +62,9 @@ pub fn AgentInfo() -> impl IntoView {
                                 >
                                     <option value="">"-- Select MOS --"</option>
                                     {
-                                        general_skills.iter().map(|skill| {
+                                        general_skills.iter().map(|&skill| {
                                             view! {
-                                                <option value=skill.clone()>{skill.clone()}</option>
+                                                <option value=skill>{skill}</option>
                                             }
                                             .into_any()
                                         }).collect::<Vec<_>>()
