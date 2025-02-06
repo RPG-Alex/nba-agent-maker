@@ -1,4 +1,7 @@
-use crate::character::{Character, CharacterStoreFields};
+use crate::{
+    character::{Character, CharacterStoreFields},
+    rules::general_skills::*,
+};
 use leptos::prelude::*;
 use reactive_stores::Store;
 
@@ -6,6 +9,7 @@ use reactive_stores::Store;
 pub fn AgentInfo() -> impl IntoView {
     let (editing, set_editing) = signal(true);
     let state = expect_context::<Store<Character>>();
+    let general_skills = gen_skills_list();
     view! {
             <section id="agent-info">
                 <div>
@@ -45,8 +49,44 @@ pub fn AgentInfo() -> impl IntoView {
                     }
             </div>
             <div>
-                <label for="mos">"MOS"</label>
-                <input type="text" id="mos"/>
+                <label for="mos">"MOS: "</label>
+                {
+                    move || {
+                        if editing.get() {
+                            view! {
+                                <select
+                                    id="mos"
+                                    bind:value=state.mos()
+                                    on:change=move |ev| {
+                                        state.mos().set(event_target_value(&ev));
+                                    }
+                                >
+                                    <option value="">"-- Select MOS --"</option>
+                                    {
+                                        general_skills.iter().map(|skill| {
+                                            view! {
+                                                <option value=skill.clone()>{skill.clone()}</option>
+                                            }
+                                            .into_any()
+                                        }).collect::<Vec<_>>()
+                                    }
+                                </select>
+                            }
+                            .into_any()
+                        } else {
+                            view! {
+                                <span>{state.mos().get()}</span>
+                                <button
+                                    on:click=move |_| set_editing.set(true)
+                                    title="Edit"
+                                >
+                                    "✎"
+                                </button>
+                            }
+                            .into_any()
+                        }
+                    }
+                }
             </div>
             <div>
                 <label for="drive">"Drive"</label>
@@ -87,35 +127,3 @@ pub fn AgentInfo() -> impl IntoView {
         </section>
     }
 }
-
-/*
-|    |    |    |    |    |
-|----|----|----|----|----|
-| ✝  | ☥  | ☦  | ⛧  | ☠  |
-| ⚰  | 🦇  | 🌙  | ⛤  | ⚜  |
-| 🔮  | ☾  | ♏  | 🩸  | ∴  |
-| ♆  | 𓂀  | ☀  | ☪  | ✡  |
-| 🕯  | 🔻  | 🔺  | 🕷  | 🕸  |
-| 🏺  | ⚗  | 🜏  | 🜍  | 🜔  |
-| 🜊  | 🜋  | 🜎  | 🜙  | 🜛  |
-| ☾🌑☽  | 🌘🌑🌒  | ☽☉☾  | 𖤐  | ⛥  |
-| ⛥⛧⛤  | ☩  | ☬  | ✵  | ✶  |
-| ⚖  | ⚒  | 🜎⚝🜎  | 🜠  | 🜢  |
-
-### **Edit Button Suggestions**
-Here are suggested symbols for the edit button for each field based on their themes:
-
-- **Agent Name:** ✎ *(Pencil for name entry)*
-- **MOS:** ⚒ *(Hammer & Pick, representing profession/work)*
-- **Drive:** 🔥 *(Fire, symbolizing passion and motivation)*
-- **Handler:** 🕵 *(Detective emoji, fitting for espionage/mystery themes)*
-- **Professional Role:** ⚔ *(Crossed swords, representing roles in combat/espionage)*
-- **Backgrounds:** 🏺 *(Ancient vase, symbolizing history and past experiences)*
-- **Symbol:** ⛧ *(Inverted pentagram, emphasizing mysticism & secret societies)*
-- **Solace:** ☾ *(Crescent moon, representing comfort, spirituality, or solitude)*
-- **Safety:** 🛡 *(Shield, representing protection and security)*
-- **Heat Level:** 🔻 *(Downward triangle, indicating increasing danger or tension)*
-- **Build Points:** 🩸 *(Blood drop, symbolizing sacrifice or resource allocation in a dark setting)*
-
-This way, each edit button matches the thematic essence of the corresponding field. Let me know if you'd like adjustments! 🦇
-*/

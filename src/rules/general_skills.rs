@@ -1,0 +1,25 @@
+pub fn gen_skills_list() -> Vec<&'static str> {
+    vec![
+        "Athletics",
+        "Conceal",
+        "Cover",
+        "Digital Intrusion",
+        "Disguise",
+        "Driving",
+        "Explosive Devices",
+        "Filch",
+        "Gambling",
+        "Hand-to-Hand",
+        "Infiltration",
+        "Mechanics",
+        "Medic",
+        "Network",
+        "Piloting",
+        "Preparedness",
+        "Sense Trouble",
+        "Shooting",
+        "Shrink",
+        "Surveillance",
+        "Weapons",
+    ]
+}

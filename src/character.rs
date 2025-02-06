@@ -183,3 +183,7 @@ impl Default for Character {
         }
     }
 }
+
+pub struct Mos {
+    pub mos: String,
+}
