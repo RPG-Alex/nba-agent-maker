@@ -6,11 +6,13 @@ pub fn get_drives() -> Vec<&'static str> {
         "Mystery",
         "Nowhere Else to Go",
         "Patriotism",
-        "I Never Left",
+        "I Never Left (burn mode)",
         "Programming",
         "Restoration",
-        "Vengeance",
+        "Revenge",
         "Slayer",
-        "Collector",
+        "Thrill-Seeker",
+        "Transparency",
+        "Collector (burn mode)",
     ]
 }

@@ -1,6 +1,6 @@
 use crate::{
     character::{Character, CharacterStoreFields},
-    rules::general_skills::*,
+    rules::{drives::get_drives, general_skills::gen_skills_list},
 };
 use leptos::prelude::*;
 use reactive_stores::Store;
@@ -10,6 +10,7 @@ pub fn AgentInfo() -> impl IntoView {
     let (editing, set_editing) = signal(true);
     let state = expect_context::<Store<Character>>();
     let general_skills = gen_skills_list();
+    let drive = get_drives();
     view! {
             <section id="agent-info">
             <div>
@@ -76,8 +77,31 @@ pub fn AgentInfo() -> impl IntoView {
                 }
             </div>
             <div>
-                <label for="drive">"Drive"</label>
-                <input type="text" id="drive"/>
+                <label for="drive">"Drive: "</label>
+                {
+                    move || {
+                        view! {
+                            <select
+                                id="drive"
+                                bind:value=state.drive()
+                                on:change=move |ev| {
+                                    state.drive().set(event_target_value(&ev));
+                                }
+                            >
+                                <option value="">"-- Select Drive --"</option>
+                                {
+                                    drive.iter().map(|&d| {
+                                        view! {
+                                            <option value=d>{d}</option>
+                                        }
+                                        .into_any()
+                                    }).collect::<Vec<_>>()
+                                }
+                            </select>
+                        }
+                        .into_any()
+                    }
+                }
             </div>
             <div>
                 <label for="handler">"Handler"</label>
