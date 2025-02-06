@@ -12,47 +12,46 @@ pub fn AgentInfo() -> impl IntoView {
     let general_skills = gen_skills_list();
     view! {
             <section id="agent-info">
-                <div>
-                    <label for="agent-name">"Agent Name: "</label>
-                    {
-                        move || {
-                            if editing.get() {
-                                view! {
-                                        <input
-                                            type="text"
-                                            id="agent-name"
-                                            prop:value=state.agent_name().get()
-                                            on:input:target=move |ev| {
-                                                state.agent_name().set(ev.target().value());
-                                                }
-                                            on:keydown=move |ev| {
-                                                if ev.key() == "Enter" {
-                                                    set_editing.set(false);
-                                                }
+            <div>
+                <label for="agent-name">"Agent Name: "</label>
+                {
+                    move || {
+                        if editing.get() {
+                            view! {
+                                    <input
+                                        type="text"
+                                        id="agent-name"
+                                        prop:value=state.agent_name().get()
+                                        on:input:target=move |ev| {
+                                            state.agent_name().set(ev.target().value());
                                             }
-                                        />
-                                }
-                                .into_any()
-                            } else {
-                                view! {
-                                        <span>{state.agent_name().get()} " "</span>
-                                        <button
-                                            on:click=move |_| set_editing.set(true)
-                                            title="Edit"
-                                        >
-                                            "✎"
-                                        </button>
-                                }
-                                .into_any()
+                                        on:keydown=move |ev| {
+                                            if ev.key() == "Enter" {
+                                                set_editing.set(false);
+                                            }
+                                        }
+                                    />
                             }
+                            .into_any()
+                        } else {
+                            view! {
+                                    <span>{state.agent_name().get()} " "</span>
+                                    <button
+                                        on:click=move |_| set_editing.set(true)
+                                        title="Edit"
+                                    >
+                                        "✎"
+                                    </button>
+                            }
+                            .into_any()
                         }
                     }
+                }
             </div>
             <div>
                 <label for="mos">"MOS: "</label>
                 {
                     move || {
-                        if editing.get() {
                             view! {
                                 <select
                                     id="mos"
@@ -73,18 +72,6 @@ pub fn AgentInfo() -> impl IntoView {
                                 </select>
                             }
                             .into_any()
-                        } else {
-                            view! {
-                                <span>{state.mos().get()}</span>
-                                <button
-                                    on:click=move |_| set_editing.set(true)
-                                    title="Edit"
-                                >
-                                    "✎"
-                                </button>
-                            }
-                            .into_any()
-                        }
                     }
                 }
             </div>
