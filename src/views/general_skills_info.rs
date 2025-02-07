@@ -1,4 +1,4 @@
-use crate::rules::character::{Character, CharacterStoreFields};
+use crate::rules::character::Character;
 use leptos::prelude::*;
 use reactive_stores::Store;
 

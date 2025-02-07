@@ -69,10 +69,6 @@ impl Character {
     pub fn get_mos(&self) -> String {
         MOS::get_mos(&self.general_skills)
     }
-    pub fn set_mos(&mut self, skill_name: &str) {
-        self.general_skills.set_mos(skill_name);
-        self.mos = MOS::get_mos(&self.general_skills);
-    }
 }
 
 impl Default for Character {

@@ -1,7 +1,6 @@
 use crate::rules::{
     character::{Character, CharacterStoreFields},
     drives::get_drives,
-    general_skills::gen_skills_list,
 };
 use leptos::prelude::*;
 use reactive_stores::Store;
@@ -15,7 +14,6 @@ pub fn AgentInfo() -> impl IntoView {
     let (background, set_background) = signal(String::new());
 
     let state = expect_context::<Store<Character>>();
-    let general_skills = gen_skills_list();
     let drive = get_drives();
 
     let investigative_points = RwSignal::new(0);

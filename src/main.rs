@@ -1,5 +1,4 @@
 mod rules;
-mod sheet_parts;
 mod views;
 
 use leptos::prelude::*;
