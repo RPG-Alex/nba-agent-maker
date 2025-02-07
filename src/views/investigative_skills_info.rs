@@ -5,8 +5,7 @@ use reactive_stores::Store;
 #[component]
 pub fn InvestigativeSkillsInfo() -> impl IntoView {
     let state = expect_context::<Store<Character>>();
-    let total = 3; // total number of points for each investigative ability
-
+    let total = 3;
     view! {
         <div class="investigative-skills">
             <div class="academic">
