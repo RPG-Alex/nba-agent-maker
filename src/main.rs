@@ -4,7 +4,7 @@ mod views;
 use leptos::prelude::*;
 use reactive_stores::Store;
 use rules::character::*;
-use views::{agent_info::*, general_skills_info::*};
+use views::{agent_info::*, general_skills_info::*, investigative_skills_info::*};
 
 fn main() {
     console_error_panic_hook::set_once();
@@ -14,6 +14,7 @@ fn main() {
             <div id="character-sheet">
                 <AgentInfo />
                 <GeneralSkillsInfo />
+                <InvestigativeSkillsInfo />
                 <AgentState />
             </div>
         }
@@ -30,5 +31,6 @@ fn AgentState() -> impl IntoView {
         <p>"Here is the agent Drive:" {move || state.drive().get()}</p>
         <p>"Here is the agent Handler:" {move || state.handler().get()}</p>
         <p>"Here is the agent  Rating in Skill: " {move || state.general_skills().get().network.rating}</p>
+        <p>"Here is the agent  Rating in Skill: " {move || state.investigative_abilities().get().accounting.rating}</p>
     }
 }
