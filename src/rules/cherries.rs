@@ -1,3 +1,18 @@
+#[derive(Clone, PartialEq)]
+pub struct Cherry {
+    pub description: String,
+    pub chosen: bool,
+}
+
+impl Cherry {
+    pub fn new(description: &str) -> Self {
+        Self {
+            description: description.to_string(),
+            chosen: false,
+        }
+    }
+}
+
 // ATHLETICS
 pub fn athletic_cherries() -> Vec<&'static str> {
     vec![
@@ -12,7 +27,7 @@ pub fn athletic_maneuvers() -> Vec<&'static str> {
         "Breakfall (NBA p.80)",
         "Like Smoke (p.51)",
         "Parkour (NBA p.58)",
-        "Support Moves (NBA p.76)"
+        "Support Moves (NBA p.76)",
     ]
 }
 
@@ -38,10 +53,7 @@ pub fn digital_intrusion_cherries() -> Vec<&'static str> {
 }
 
 pub fn digital_intrusion_maneuvers() -> Vec<&'static str> {
-    vec![
-        "Digital Judo (p.81)",
-        "m4d sk1llz (p.51)",
-    ]
+    vec!["Digital Judo (p.81)", "m4d sk1llz (p.51)"]
 }
 
 // DISGUISE
@@ -54,10 +66,7 @@ pub fn disguise_cherries() -> Vec<&'static str> {
 }
 
 pub fn disguise_maneuvers() -> Vec<&'static str> {
-    vec![
-        "Alibi (p.49)",
-        "Quick Change (p.51)",
-    ]
+    vec!["Alibi (p.49)", "Quick Change (p.51)"]
 }
 
 // DRIVING
@@ -69,10 +78,7 @@ pub fn driving_cherries() -> Vec<&'static str> {
 }
 
 pub fn driving_maneuvers() -> Vec<&'static str> {
-    vec![
-        "Gear Devil (NBA p.56)",
-        "Signature Wheels (p.52)",
-    ]
+    vec!["Gear Devil (NBA p.56)", "Signature Wheels (p.52)"]
 }
 
 // EXPLOSIVE DEVICES
@@ -109,9 +115,7 @@ pub fn gambling_cherries() -> Vec<&'static str> {
 }
 
 pub fn gambling_maneuvers() -> Vec<&'static str> {
-    vec![
-        "Card Up the Sleeve (p.50)",
-    ]
+    vec!["Card Up the Sleeve (p.50)"]
 }
 
 // HAND-TO-HAND
@@ -159,9 +163,7 @@ pub fn mechanics_cherries() -> Vec<&'static str> {
 }
 
 pub fn mechanics_maneuvers() -> Vec<&'static str> {
-    vec![
-        "Grease Monkey (p.51)",
-    ]
+    vec!["Grease Monkey (p.51)"]
 }
 
 // MEDIC
@@ -173,9 +175,7 @@ pub fn medic_cherries() -> Vec<&'static str> {
 }
 
 pub fn medic_maneuvers() -> Vec<&'static str> {
-    vec![
-        "Verbal Trauma Unit (p.52)",
-    ]
+    vec!["Verbal Trauma Unit (p.52)"]
 }
 
 // PILOTING
@@ -187,9 +187,7 @@ pub fn piloting_cherries() -> Vec<&'static str> {
 }
 
 pub fn piloting_maneuvers() -> Vec<&'static str> {
-    vec![
-        "Gear Devil (NBA p.56)",
-    ]
+    vec!["Gear Devil (NBA p.56)"]
 }
 
 // PREPAREDNESS
@@ -202,9 +200,7 @@ pub fn preparedness_cherries() -> Vec<&'static str> {
 }
 
 pub fn preparedness_maneuvers() -> Vec<&'static str> {
-    vec![
-        "Calculated Risk (p.50)",
-    ]
+    vec!["Calculated Risk (p.50)"]
 }
 
 // SENSE TROUBLE
@@ -216,10 +212,7 @@ pub fn sense_trouble_cherries() -> Vec<&'static str> {
 }
 
 pub fn sense_trouble_maneuvers() -> Vec<&'static str> {
-    vec![
-        "Danger Zone (p.50)",
-        "Perfect Drop (p.53)",
-    ]
+    vec!["Danger Zone (p.50)", "Perfect Drop (p.53)"]
 }
 
 // SHOOTING
