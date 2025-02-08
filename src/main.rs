@@ -4,7 +4,10 @@ mod views;
 use leptos::prelude::*;
 use reactive_stores::Store;
 use rules::character::*;
-use views::{agent_info::*, general_skills_info::*, investigative_skills_info::*};
+use views::{
+    agent_info::*, general_skills::general_skills_info::*,
+    investigative_abilities::investigative_abilities_info::*,
+};
 
 fn main() {
     console_error_panic_hook::set_once();
