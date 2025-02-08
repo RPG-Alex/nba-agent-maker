@@ -40,6 +40,20 @@ pub fn SenseTrouble() -> impl IntoView {
                             >" ✘"
                             </span>
                         }.into_any()
+                    } else if r_i == 8 {
+                        view! {
+                            <span
+                                class="bubble"
+                                data-value={r_i.to_string()}
+                                on:click=move |_| {
+                                    state.update(|char| {
+                                        char.general_skills.sense_trouble.rating = r_i;
+                                    });
+                                }
+                            >
+                               {if filled() { "⬤" } else { "⭕" }}
+                            </span>
+                        }.into_any()
                     } else {
                         view! {
                             <span
