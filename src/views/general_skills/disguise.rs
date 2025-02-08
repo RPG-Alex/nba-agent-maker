@@ -37,7 +37,7 @@ pub fn Disguise() -> impl IntoView {
                                         char.general_skills.disguise.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

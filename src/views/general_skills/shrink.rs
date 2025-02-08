@@ -37,7 +37,7 @@ pub fn Shrink() -> impl IntoView {
                                         char.general_skills.shrink.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

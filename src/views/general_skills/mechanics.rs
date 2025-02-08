@@ -37,7 +37,7 @@ pub fn Mechanics() -> impl IntoView {
                                         char.general_skills.mechanics.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

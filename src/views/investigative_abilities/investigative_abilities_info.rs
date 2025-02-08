@@ -6,10 +6,10 @@ use leptos::prelude::*;
 #[component]
 pub fn InvestigativeSkillsInfo() -> impl IntoView {
     view! {
-        <div class="investigative-skills">
+        <section id="investigative-skills">
             <AcademicAbilities />
             <InterpersonalAbilities />
             <TechnicalAbilities />
-        </div>
+        </section>
     }
 }

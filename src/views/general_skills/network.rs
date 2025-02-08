@@ -37,7 +37,7 @@ pub fn Network() -> impl IntoView {
                                         char.general_skills.network.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

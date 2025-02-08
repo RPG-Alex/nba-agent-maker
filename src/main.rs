@@ -5,7 +5,7 @@ use leptos::prelude::*;
 use reactive_stores::Store;
 use rules::character::*;
 use views::{
-    agent_info::*, general_skills::general_skills_info::*,
+    agent_info::*, general_skills::general_skills_info::*, head::*,
     investigative_abilities::investigative_abilities_info::*, stats_info::*,
 };
 
@@ -14,10 +14,13 @@ fn main() {
     leptos::mount::mount_to_body(|| {
         provide_context(Store::new(Character::default()));
         view! {
+            <MyHead />
             <div id="character-sheet">
                 <AgentInfo />
-                <GeneralSkillsInfo />
-                <InvestigativeSkillsInfo />
+                    <div id="skills">
+                        <GeneralSkillsInfo />
+                        <InvestigativeSkillsInfo />
+                    </div>
                 <StatsView />
                 //<AgentState />
             </div>

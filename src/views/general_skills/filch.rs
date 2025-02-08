@@ -37,7 +37,7 @@ pub fn Filch() -> impl IntoView {
                                         char.general_skills.filch.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

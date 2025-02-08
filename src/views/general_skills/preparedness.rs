@@ -37,7 +37,7 @@ pub fn Preparedness() -> impl IntoView {
                                         char.general_skills.preparedness.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

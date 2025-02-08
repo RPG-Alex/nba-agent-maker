@@ -37,7 +37,7 @@ pub fn ExplosiveDevices() -> impl IntoView {
                                         char.general_skills.explosive_devices.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

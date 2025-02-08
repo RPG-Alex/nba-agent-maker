@@ -37,7 +37,7 @@ pub fn Medic() -> impl IntoView {
                                         char.general_skills.medic.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

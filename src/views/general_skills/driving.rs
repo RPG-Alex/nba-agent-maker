@@ -37,7 +37,7 @@ pub fn Driving() -> impl IntoView {
                                         char.general_skills.driving.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

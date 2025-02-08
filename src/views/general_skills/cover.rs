@@ -37,7 +37,7 @@ pub fn Cover() -> impl IntoView {
                                         char.general_skills.cover.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

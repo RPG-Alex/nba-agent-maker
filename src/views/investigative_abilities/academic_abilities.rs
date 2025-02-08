@@ -7,7 +7,7 @@ pub fn AcademicAbilities() -> impl IntoView {
     let state = expect_context::<Store<Character>>();
     let total = 3;
     view! {
-        <div class="academic">
+        <div id="academic">
             <header>"Academic Abilities"</header>
 
             <div class="ability" id="accounting">
@@ -39,7 +39,7 @@ pub fn AcademicAbilities() -> impl IntoView {
                                         });
                                     }
                                 >
-                                    "|_|"
+                                    " ✘"
                                 </span>
                             }.into_any()
                         } else {
@@ -90,7 +90,7 @@ pub fn AcademicAbilities() -> impl IntoView {
                                         });
                                     }
                                 >
-                                    "|_|"
+                                    " ✘"
                                 </span>
                             }.into_any()
                         } else {

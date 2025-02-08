@@ -37,7 +37,7 @@ pub fn Gambling() -> impl IntoView {
                                         char.general_skills.gambling.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

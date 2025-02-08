@@ -37,7 +37,7 @@ pub fn DigitalIntrusion() -> impl IntoView {
                                         char.general_skills.digital_intrusion.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

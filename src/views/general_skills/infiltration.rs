@@ -37,7 +37,7 @@ pub fn Infiltration() -> impl IntoView {
                                         char.general_skills.infiltration.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

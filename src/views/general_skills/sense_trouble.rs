@@ -37,7 +37,7 @@ pub fn SenseTrouble() -> impl IntoView {
                                         char.general_skills.sense_trouble.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

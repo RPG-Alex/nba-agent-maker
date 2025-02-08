@@ -37,7 +37,7 @@ pub fn Shooting() -> impl IntoView {
                                         char.general_skills.shooting.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

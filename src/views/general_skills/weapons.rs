@@ -37,7 +37,7 @@ pub fn Weapons() -> impl IntoView {
                                         char.general_skills.weapons.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

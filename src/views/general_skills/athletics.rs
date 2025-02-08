@@ -37,7 +37,7 @@ pub fn Athletics() -> impl IntoView {
                                         char.general_skills.athletics.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

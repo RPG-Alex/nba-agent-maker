@@ -37,7 +37,7 @@ pub fn HandToHand() -> impl IntoView {
                                         char.general_skills.hand_to_hand.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

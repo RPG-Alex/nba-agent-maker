@@ -37,7 +37,7 @@ pub fn Piloting() -> impl IntoView {
                                         char.general_skills.piloting.rating = 0;
                                     });
                                 }
-                            >"|_|"
+                            >" ✘"
                             </span>
                         }.into_any()
                     } else {

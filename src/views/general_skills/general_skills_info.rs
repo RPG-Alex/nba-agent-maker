@@ -9,28 +9,28 @@ use leptos::prelude::*;
 #[component]
 pub fn GeneralSkillsInfo() -> impl IntoView {
     view! {
-        <div class="general-skills">
-                    <Athletics />
-                    <Conceal />
-                    <Cover />
-                    <DigitalIntrusion />
-                    <Disguise />
-                    <Driving />
-                    <ExplosiveDevices />
-                    <Filch />
-                    <Gambling />
-                    <HandToHand />
-                    <Infiltration />
-                    <Mechanics />
-                    <Medic />
-                    <Network />
-                    <Piloting />
-                    <Preparedness />
-                    <SenseTrouble />
-                    <Shooting />
-                    <Shrink />
-                    <Surveillance />
-                    <Weapons />
-                </div>
+        <section id="general-skills">
+            <Athletics />
+            <Conceal />
+            <Cover />
+            <DigitalIntrusion />
+            <Disguise />
+            <Driving />
+            <ExplosiveDevices />
+            <Filch />
+            <Gambling />
+            <HandToHand />
+            <Infiltration />
+            <Mechanics />
+            <Medic />
+            <Network />
+            <Piloting />
+            <Preparedness />
+            <SenseTrouble />
+            <Shooting />
+            <Shrink />
+            <Surveillance />
+            <Weapons />
+        </section>
     }
 }
