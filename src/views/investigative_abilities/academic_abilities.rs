@@ -9,7 +9,6 @@ pub fn AcademicAbilities() -> impl IntoView {
     view! {
         <div id="academic">
             <header>"Academic Abilities"</header>
-
             <div class="ability" id="accounting">
                 <label for="accounting">"Accounting"</label>
                 <div class="bubbles">
@@ -60,7 +59,6 @@ pub fn AcademicAbilities() -> impl IntoView {
                     }).collect::<Vec<_>>() }
                 </div>
             </div>
-
             <div class="ability" id="archaeology">
                 <label for="archaeology">"Archaeology"</label>
                 <div class="bubbles">
@@ -114,3 +112,21 @@ pub fn AcademicAbilities() -> impl IntoView {
         </div>
     }
 }
+
+/*
+accounting
+archaelogoy
+architecture
+art history
+criminology
+diagnoses
+history
+human terrain
+langauges *
+law
+military science
+occult studies
+research
+vampirology
+law
+*/
