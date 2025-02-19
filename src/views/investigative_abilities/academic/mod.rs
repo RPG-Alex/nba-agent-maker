@@ -1,0 +1,14 @@
+pub mod accounting;
+pub mod archaelogy;
+pub mod architecture;
+pub mod art_history;
+pub mod criminology;
+pub mod diagnoses;
+pub mod history;
+pub mod human_terrain;
+pub mod languages;
+pub mod law;
+pub mod military_science;
+pub mod occult_studies;
+pub mod research;
+pub mod vampirology;

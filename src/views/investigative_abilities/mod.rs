@@ -1,3 +1,4 @@
+pub mod academic;
 pub mod academic_abilities;
 pub mod interpersonal_abilities;
 pub mod investigative_abilities_info;
