@@ -1,5 +1,5 @@
 pub mod accounting;
-pub mod archaelogy;
+pub mod archeology;
 pub mod architecture;
 pub mod art_history;
 pub mod criminology;

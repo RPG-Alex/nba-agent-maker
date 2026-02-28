@@ -49,7 +49,7 @@ impl LanguagesAbility {
 #[derive(Clone, PartialEq)]
 pub struct InvestigativeAbilities {
     pub accounting: InvestigativeAbility,
-    pub archaeology: InvestigativeAbility,
+    pub archeology: InvestigativeAbility,
     pub architecture: InvestigativeAbility,
     pub art_history: InvestigativeAbility,
     pub astronomy: InvestigativeAbility,
@@ -93,7 +93,7 @@ impl InvestigativeAbilities {
     pub fn new() -> Self {
         Self {
             accounting: InvestigativeAbility::new("Accounting"),
-            archaeology: InvestigativeAbility::new("Archaeology"),
+            archeology: InvestigativeAbility::new("Archeology"),
             architecture: InvestigativeAbility::new("Architecture"),
             art_history: InvestigativeAbility::new("Art History"),
             astronomy: InvestigativeAbility::new("Astronomy"),
