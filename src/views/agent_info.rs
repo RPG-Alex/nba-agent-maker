@@ -1,9 +1,8 @@
 use crate::rules::{
-    character::{Character, CharacterStoreFields},
+    character::Character,
     drives::get_drives,
 };
 use leptos::prelude::*;
-use reactive_stores::Store;
 
 #[component]
 pub fn AgentInfo() -> impl IntoView {

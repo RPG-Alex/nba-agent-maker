@@ -1,4 +1,6 @@
-#[derive(Clone, PartialEq)]
+use serde::{Deserialize, Serialize};
+
+#[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
 pub struct Cherry {
     pub description: String,
     pub chosen: bool,

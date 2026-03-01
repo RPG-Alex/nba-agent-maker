@@ -1,4 +1,6 @@
-#[derive(Clone, PartialEq)]
+use serde::{Deserialize, Serialize};
+
+#[derive(Clone, Deserialize, Serialize, Debug, PartialEq)]
 pub struct InvestigativeAbility {
     pub name: String,
     pub rating: i32,
@@ -19,7 +21,7 @@ impl InvestigativeAbility {
     }
 }
 
-#[derive(Clone, PartialEq)]
+#[derive(Clone, Deserialize, Serialize, Debug, PartialEq)]
 pub struct LanguagesAbility {
     pub ability: InvestigativeAbility,
     pub known_languages: Vec<String>,
@@ -46,7 +48,7 @@ impl LanguagesAbility {
     }
 }
 
-#[derive(Clone, PartialEq)]
+#[derive(Clone, Deserialize, Serialize, Debug, PartialEq)]
 pub struct InvestigativeAbilities {
     pub accounting: InvestigativeAbility,
     pub archeology: InvestigativeAbility,

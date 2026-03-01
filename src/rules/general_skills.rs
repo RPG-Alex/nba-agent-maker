@@ -1,6 +1,7 @@
 use crate::rules::{cherries::*, maneuvers::*};
+use serde::{Deserialize, Serialize};
 
-#[derive(Clone, PartialEq)]
+#[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
 pub struct GeneralSkill {
     pub skill: String,
     pub rating: i32,
@@ -21,7 +22,7 @@ impl GeneralSkill {
     }
 }
 
-#[derive(Clone, PartialEq)]
+#[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
 pub struct GeneralSkills {
     pub athletics: GeneralSkill,
     pub conceal: GeneralSkill,

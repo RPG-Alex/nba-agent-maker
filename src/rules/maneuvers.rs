@@ -1,4 +1,6 @@
-#[derive(Clone, PartialEq)]
+use serde::{Deserialize, Serialize};
+
+#[derive(Clone, Deserialize, Serialize, Debug, PartialEq)]
 pub struct Maneuver {
     pub description: String,
     pub unlocked: bool,

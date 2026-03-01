@@ -1,6 +1,5 @@
 use crate::rules::{general_skills::*, investigative_skills::*};
-use reactive_stores::Store;
-
+use serde::{Deserialize, Serialize};
 #[derive(Clone, PartialEq)]
 pub struct MOS;
 
@@ -41,7 +40,7 @@ impl MOS {
     }
 }
 
-#[derive(Clone, PartialEq, Store)]
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq)]
 pub struct Character {
     // Agent Info (Personality and Dossier)
     pub agent_name: String,
