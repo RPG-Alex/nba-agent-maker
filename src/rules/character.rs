@@ -90,9 +90,7 @@ impl Default for Character {
             general_points: 70,
             investigative_points: 0,
             game_modes: Vec::new(),
-
-            // General & Investigative Abilities
-            general_skills,
+            general_skills: GeneralSkills::new(),
             investigative_abilities: InvestigativeAbilities::new(),
         }
     }
