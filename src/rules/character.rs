@@ -1,4 +1,4 @@
-use crate::rules::{general_skills::*, investigative_skills::*};
+use crate::rules::{general_skills::*, investigative_skills::*, modes::GameModes};
 use serde::{Deserialize, Serialize};
 #[derive(Clone, PartialEq)]
 pub struct MOS;
@@ -44,7 +44,7 @@ impl MOS {
 pub struct Character {
     // Agent Info (Personality and Dossier)
     pub agent_name: String,
-    pub mos: String,
+    pub mos: GeneralSkill,
     pub drive: String,
     pub handler: String,
     pub professional_role: String,
@@ -52,12 +52,12 @@ pub struct Character {
     pub symbol: String,
     pub solace: String,
     pub safety: String,
-    pub health: i32,
-    pub stability: i32,
-    pub heat_level: i32,
-    pub general_points: i32,
-    pub investigative_points: i32,
-    pub game_modes: Vec<String>,
+    pub health: i8,
+    pub stability: i8,
+    pub heat_level: u8,
+    pub general_points: u16,
+    pub investigative_points: u16,
+    pub game_modes: Vec<GameModes>,
 
     // Abilities
     pub general_skills: GeneralSkills,
@@ -65,8 +65,8 @@ pub struct Character {
 }
 
 impl Character {
-    pub fn get_mos(&self) -> String {
-        MOS::get_mos(&self.general_skills)
+    pub fn get_mos(&self) -> &GeneralSkill {
+        &self.mos
     }
 }
 
@@ -76,7 +76,7 @@ impl Default for Character {
         let mos = MOS::get_mos(&general_skills);
         Self {
             agent_name: String::new(),
-            mos,
+            mos: GeneralSkill::Athletics,
             drive: String::new(),
             handler: String::new(),
             professional_role: String::new(),

@@ -10,6 +10,7 @@ use views::head::MyHead;
 #[component]
 fn Sheet() -> impl IntoView {
     let (state, set_state, _) = use_local_storage::<Character, JsonSerdeCodec>("character-data");
+    let site_name = "Rusted NBA: A Rust Based Nights Black Agents' Character Creator!";
     view! { <MyHead/>}
 }
 fn main() {

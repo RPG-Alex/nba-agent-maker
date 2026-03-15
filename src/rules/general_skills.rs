@@ -3,56 +3,41 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
 pub struct GeneralSkill {
-    pub skill: String,
+    pub skill: SkillName,
     pub rating: i32,
-    pub cherries: Vec<Cherry>,
-    pub maneuvers: Vec<Maneuver>,
+    pub chosen_cherries: Vec<Cherry>,
     pub is_mos: bool,
 }
 
-impl GeneralSkill {
-    pub fn new(name: &str, cherries: Vec<Cherry>, maneuvers: Vec<Maneuver>) -> Self {
-        Self {
-            skill: name.to_string(),
-            rating: 0,
-            cherries,
-            maneuvers,
-            is_mos: false,
-        }
-    }
-}
-
 #[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
-pub struct GeneralSkills {
-    pub athletics: GeneralSkill,
-    pub conceal: GeneralSkill,
-    pub cover: GeneralSkill,
-    pub digital_intrusion: GeneralSkill,
-    pub disguise: GeneralSkill,
-    pub driving: GeneralSkill,
-    pub explosive_devices: GeneralSkill,
-    pub filch: GeneralSkill,
-    pub gambling: GeneralSkill,
-    pub hand_to_hand: GeneralSkill,
-    pub infiltration: GeneralSkill,
-    pub mechanics: GeneralSkill,
-    pub medic: GeneralSkill,
-    pub network: GeneralSkill,
-    pub piloting: GeneralSkill,
-    pub preparedness: GeneralSkill,
-    pub sense_trouble: GeneralSkill,
-    pub shooting: GeneralSkill,
-    pub shrink: GeneralSkill,
-    pub surveillance: GeneralSkill,
-    pub weapons: GeneralSkill,
+pub enum SkillName {
+    Athletics,
+    Conceal,
+    Cover,
+    DigitalIntrusion,
+    Disguise,
+    Driving,
+    ExplosiveDevices,
+    Filch,
+    Gambling,
+    HandToHand,
+    Infiltration,
+    Mechanics,
+    Medic,
+    Network,
+    Piloting,
+    Preparedness,
+    SenseTrouble,
+    Shooting,
+    Shrink,
+    Surveillance,
+    Weapons
 }
 
-impl GeneralSkills {
-    pub fn new() -> Self {
-        Self {
-            athletics: GeneralSkill::new(
-                "Athletics",
-                vec![
+impl SkillName {
+    pub fn cherry_list(self) -> Vec<Cherry> {
+        match self {
+            SkillName::Athletics =>                 vec![
                     Cherry::new(
                         "Hard to Hit (NBA p.27): +1 to your Hit Threshold in Combat (Dust mode)",
                     ),
@@ -60,9 +45,55 @@ impl GeneralSkills {
                         "Roll Through the Pain (p.38): Spend Health to Succeed at failed Athletics Tests",
                     ),
                     Cherry::new(
-                        "Runner's Intuition (p.38): Spend 1 Athletics to judge opponent’s Athletics rating level compared to yours (Dust mode)",
+                        "Runner's Intuition (p.38): Spend 1 Athletics to judge opponent's Athletics rating level compared to yours (Dust mode)",
                     ),
                 ],
+            SkillName::Conceal => todo!(),
+            SkillName::Cover => todo!(),
+            SkillName::DigitalIntrusion => todo!(),
+            SkillName::Disguise => todo!(),
+            SkillName::Driving => todo!(),
+            SkillName::ExplosiveDevices => todo!(),
+            SkillName::Filch => todo!(),
+            SkillName::Gambling => todo!(),
+            SkillName::HandToHand => todo!(),
+            SkillName::Infiltration => todo!(),
+            SkillName::Mechanics => todo!(),
+            SkillName::Medic => todo!(),
+            SkillName::Network => todo!(),
+            SkillName::Piloting => todo!(),
+            SkillName::Preparedness => todo!(),
+            SkillName::SenseTrouble => todo!(),
+            SkillName::Shooting => todo!(),
+            SkillName::Shrink => todo!(),
+            SkillName::Surveillance => todo!(),
+            SkillName::Weapons => todo!(),
+        }
+    } 
+}
+
+impl GeneralSkill {
+    pub fn new(name: SkillName, chosen_cherries: Vec<Cherry>) -> Self {
+        Self {
+            skill: name,
+            rating: 0,
+            chosen_cherries,
+            is_mos: false,
+        }
+    }
+}
+
+#[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
+pub struct GeneralSkills {
+    general_skills: Vec<GeneralSkill>
+}
+
+impl GeneralSkills {
+    pub fn new() -> Self {
+        Self {
+            athletics: GeneralSkill::new(
+                "Athletics",
+
                 vec![
                     Maneuver::new("Breakfall (NBA p.80)"),
                     Maneuver::new("Like Smoke (p.51)"),
