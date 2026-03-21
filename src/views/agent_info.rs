@@ -12,7 +12,6 @@ pub fn AgentInfo() -> impl IntoView {
     let (role, set_role) = signal(true);
     let (background, set_background) = signal(String::new());
 
-    let state = expect_context::<Store<Character>>();
     let drive = get_drives();
 
     let investigative_points = RwSignal::new(0);

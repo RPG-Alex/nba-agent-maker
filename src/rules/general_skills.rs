@@ -1,15 +1,9 @@
-use crate::rules::{cherries::*, maneuvers::*};
+use std::fmt::{self, Display};
+
+use crate::rules::{maneuvers::*, modes::GameMode};
 use serde::{Deserialize, Serialize};
 
-#[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
-pub struct GeneralSkill {
-    pub skill: SkillName,
-    pub rating: i32,
-    pub chosen_cherries: Vec<Cherry>,
-    pub is_mos: bool,
-}
-
-#[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
+#[derive(Clone, Copy, Serialize, Deserialize, Debug, PartialEq)]
 pub enum SkillName {
     Athletics,
     Conceal,
@@ -31,24 +25,114 @@ pub enum SkillName {
     Shooting,
     Shrink,
     Surveillance,
-    Weapons
+    Weapons,
 }
 
-impl SkillName {
-    pub fn cherry_list(self) -> Vec<Cherry> {
+impl Display for SkillName {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            SkillName::Athletics =>                 vec![
-                    Cherry::new(
-                        "Hard to Hit (NBA p.27): +1 to your Hit Threshold in Combat (Dust mode)",
-                    ),
-                    Cherry::new(
-                        "Roll Through the Pain (p.38): Spend Health to Succeed at failed Athletics Tests",
-                    ),
-                    Cherry::new(
-                        "Runner's Intuition (p.38): Spend 1 Athletics to judge opponent's Athletics rating level compared to yours (Dust mode)",
-                    ),
-                ],
-            SkillName::Conceal => todo!(),
+            SkillName::Athletics => write!(f, "Athletics"),
+            SkillName::Conceal => write!(f, "Conceal"),
+            SkillName::Cover => write!(f, "Cover"),
+            SkillName::DigitalIntrusion => write!(f, "Digital Intrusion"),
+            SkillName::Disguise => write!(f, "Disguise"),
+            SkillName::Driving => write!(f, "Driving"),
+            SkillName::ExplosiveDevices => write!(f, "Explosive Devices"),
+            SkillName::Filch => write!(f, "Filch"),
+            SkillName::Gambling => write!(f, "Gambling"),
+            SkillName::HandToHand => write!(f, "Hand to Hand"),
+            SkillName::Infiltration => write!(f, "Infiltration"),
+            SkillName::Mechanics => write!(f, "Mechanics"),
+            SkillName::Medic => write!(f, "Medic"),
+            SkillName::Network => write!(f, "Network"),
+            SkillName::Piloting => write!(f, "Piloting"),
+            SkillName::Preparedness => write!(f, "Preparedness"),
+            SkillName::SenseTrouble => write!(f, "Sense Trouble"),
+            SkillName::Shooting => write!(f, "Shooting"),
+            SkillName::Shrink => write!(f, "Shrink"),
+            SkillName::Surveillance => write!(f, "Surveillance"),
+            SkillName::Weapons => write!(f, "Weapons"),
+        }
+    }
+}
+
+#[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
+pub struct Cherry {
+    game_mode: GameMode,
+    name: String,
+    description: String,
+}
+
+impl Cherry {
+    pub fn game_mode(&self) -> &GameMode {
+        &self.game_mode
+    }
+    pub fn name(&self) -> String {
+        self.name
+    } 
+    pub fn description(&self) -> String {
+        self.description
+    }
+    pub fn athletics() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::Dust,
+                name: "Hard to Hit".to_owned(),
+                description: "Hard to Hit (NBA p.27): +1 to your Hit Threshold in Combat (Dust mode)".to_owned(),
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Roll Through the Pain".to_owned(),
+                description:  "Roll Through the Pain (p.38): Spend Health to Succeed at failed Athletics Tests".to_owned(),
+            },
+            Cherry {
+                game_mode: GameMode::Dust,
+                name: "Runner's Intuition".to_owned(),
+                description: "Runner's Intuition (p.38): Spend 1 Athletics to judge opponent's Athletics rating level compared to yours (Dust mode)".to_owned(),
+            }
+        ]
+    }
+    pub fn conceal() -> Vec<Cherry>{
+        vec![
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Bug Stasher".to_owned(),
+                description: "Bug Stasher (p.39): Hide a bug against all but SIGINT-agency search or specialized equipment".to_owned(),
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Perfect Holdout".to_owned(),
+                description: "Perfect Holdout (NBA p.27): Hide a small object on your person against all but X-ray or strip search".to_owned(),
+            },
+        ]
+    }
+}
+
+
+#[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
+pub struct GeneralSkill {
+    pub skill: SkillName,
+    pub rating: i32,
+    pub chosen_cherries: Vec<Cherry>,
+    pub is_mos: bool,
+}
+
+impl GeneralSkill {
+    pub fn new(name: SkillName) -> Self {
+        Self {
+            skill: name,
+            rating: 0,
+            chosen_cherries: Vec::new(),
+            is_mos: false,
+        }
+    }
+}
+
+impl GeneralSkill {
+    pub fn cherry_list(self) -> Vec<Cherry> {
+        match self.skill {
+            SkillName::Athletics => Cherry::athletics(),
+            SkillName::Conceal => Cherry::conceal(),
             SkillName::Cover => todo!(),
             SkillName::DigitalIntrusion => todo!(),
             SkillName::Disguise => todo!(),
@@ -69,23 +153,12 @@ impl SkillName {
             SkillName::Surveillance => todo!(),
             SkillName::Weapons => todo!(),
         }
-    } 
-}
-
-impl GeneralSkill {
-    pub fn new(name: SkillName, chosen_cherries: Vec<Cherry>) -> Self {
-        Self {
-            skill: name,
-            rating: 0,
-            chosen_cherries,
-            is_mos: false,
-        }
     }
 }
 
 #[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
 pub struct GeneralSkills {
-    general_skills: Vec<GeneralSkill>
+    general_skills: Vec<GeneralSkill>,
 }
 
 impl GeneralSkills {
@@ -93,7 +166,6 @@ impl GeneralSkills {
         Self {
             athletics: GeneralSkill::new(
                 "Athletics",
-
                 vec![
                     Maneuver::new("Breakfall (NBA p.80)"),
                     Maneuver::new("Like Smoke (p.51)"),
@@ -104,12 +176,7 @@ impl GeneralSkills {
             conceal: GeneralSkill::new(
                 "Conceal",
                 vec![
-                    Cherry::new(
-                        "Bug Stasher (p.39): Hide a bug against all but SIGINT-agency search or specialized equipment",
-                    ),
-                    Cherry::new(
-                        "Perfect Holdout (NBA p.27): Hide a small object on your person against all but X-ray or strip search",
-                    ),
+
                 ],
                 vec![], // No maneuvers for Conceal
             ),

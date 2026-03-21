@@ -3,7 +3,6 @@ use leptos::prelude::*;
 
 #[component]
 pub fn Shooting() -> impl IntoView {
-    let state = expect_context::<Store<Character>>();
 
     view! {
         <div class="shooting">

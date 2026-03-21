@@ -3,7 +3,6 @@ use leptos::prelude::*;
 
 #[component]
 pub fn Accounting() -> impl IntoView {
-    let state = expect_context::<Store<Character>>();
     let total = 3;
     view! {
         <div class="ability" id="accounting">

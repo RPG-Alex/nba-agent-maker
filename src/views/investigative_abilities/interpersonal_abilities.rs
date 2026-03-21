@@ -3,7 +3,7 @@ use leptos::prelude::*;
 
 #[component]
 pub fn InterpersonalAbilities() -> impl IntoView {
-    let state = expect_context::<Store<Character>>();
+
     let total = 3;
     view! {
         <div id="interpersonal">

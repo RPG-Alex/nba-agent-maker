@@ -10,7 +10,7 @@ impl Maneuver {
     pub fn new(description: &str, unlock_rating: u8) -> Self {
         Self {
             description: description.to_string(),
-            unlock_rating
+            unlock_rating,
         }
     }
 }

@@ -4,7 +4,6 @@ use reactive_stores::Store;
 
 #[component]
 pub fn Conceal() -> impl IntoView {
-    let state = expect_context::<Store<Character>>();
 
     view! {
         <div class="conceal">
