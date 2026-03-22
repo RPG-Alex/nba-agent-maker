@@ -106,6 +106,24 @@ impl Cherry {
             },
         ]
     }
+    pub fn digital_intrusion() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Cracker's Crypto".to_owned(),
+                description: "Cracker's Crypto (NBA p.28): 1 free rating point in Cryptography".to_owned()},
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Head of a pin".to_owned(),
+                description: "Head of a PIN (p.39): If you see others input passwords, you can guess them later".to_owned(),
+            },
+            Cherry {
+                game_mode: GameMode::Dust,
+                name: "Mr.Clean".to_owned(),
+                description: "Mr. Clean (p.39): Your smartphones and other devices are untraceable (Dust mode)".to_owned(),
+            },
+        ]
+    }
 }
 
 
@@ -133,8 +151,9 @@ impl GeneralSkill {
         match self.skill {
             SkillName::Athletics => Cherry::athletics(),
             SkillName::Conceal => Cherry::conceal(),
-            SkillName::Cover => todo!(),
-            SkillName::DigitalIntrusion => todo!(),
+            // cover has no cherries. 
+            SkillName::Cover => vec![],
+            SkillName::DigitalIntrusion => Cherry::digital_intrusion(),
             SkillName::Disguise => todo!(),
             SkillName::Driving => todo!(),
             SkillName::ExplosiveDevices => todo!(),
@@ -183,15 +202,7 @@ impl GeneralSkills {
             cover: GeneralSkill::new("Cover", vec![], vec![]),
             digital_intrusion: GeneralSkill::new(
                 "Digital Intrusion",
-                vec![
-                    Cherry::new("Cracker's Crypto (NBA p.28): 1 free rating point in Cryptography"),
-                    Cherry::new(
-                        "Head of a PIN (p.39): If you see others input passwords, you can guess them later",
-                    ),
-                    Cherry::new(
-                        "Mr. Clean (p.39): Your smartphones and other devices are untraceable (Dust mode)",
-                    ),
-                ],
+
                 vec![
                     Maneuver::new("Digital Judo (p.81)"),
                     Maneuver::new("m4d sk1llz (p.51)"),
