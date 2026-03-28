@@ -1,4 +1,4 @@
-use std::fmt::{self, Display};
+use std::{fmt::{self, Display}, vec};
 
 use crate::rules::{maneuvers::*, modes::GameMode};
 use serde::{Deserialize, Serialize};
@@ -59,36 +59,36 @@ impl Display for SkillName {
 #[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
 pub struct Cherry {
     game_mode: GameMode,
-    name: String,
-    description: String,
+    name: &'static str,
+    description: &'static str,
 }
 
 impl Cherry {
     pub fn game_mode(&self) -> &GameMode {
         &self.game_mode
     }
-    pub fn name(&self) -> String {
+    pub fn name(&self) -> &'static str {
         self.name
     } 
-    pub fn description(&self) -> String {
+    pub fn description(&self) -> &'static str {
         self.description
     }
     pub fn athletics() -> Vec<Cherry> {
         vec![
             Cherry {
                 game_mode: GameMode::Dust,
-                name: "Hard to Hit".to_owned(),
-                description: "Hard to Hit (NBA p.27): +1 to your Hit Threshold in Combat (Dust mode)".to_owned(),
+                name: "Hard to Hit",
+                description: "Hard to Hit (NBA p.27): +1 to your Hit Threshold in Combat (Dust mode)",
             },
             Cherry {
                 game_mode: GameMode::None,
-                name: "Roll Through the Pain".to_owned(),
-                description:  "Roll Through the Pain (p.38): Spend Health to Succeed at failed Athletics Tests".to_owned(),
+                name: "Roll Through the Pain",
+                description:  "Roll Through the Pain (p.38): Spend Health to Succeed at failed Athletics Tests",
             },
             Cherry {
                 game_mode: GameMode::Dust,
-                name: "Runner's Intuition".to_owned(),
-                description: "Runner's Intuition (p.38): Spend 1 Athletics to judge opponent's Athletics rating level compared to yours (Dust mode)".to_owned(),
+                name: "Runner's Intuition",
+                description: "Runner's Intuition (p.38): Spend 1 Athletics to judge opponent's Athletics rating level compared to yours (Dust mode)",
             }
         ]
     }
@@ -96,13 +96,13 @@ impl Cherry {
         vec![
             Cherry {
                 game_mode: GameMode::None,
-                name: "Bug Stasher".to_owned(),
-                description: "Bug Stasher (p.39): Hide a bug against all but SIGINT-agency search or specialized equipment".to_owned(),
+                name: "Bug Stasher",
+                description: "Bug Stasher (p.39): Hide a bug against all but SIGINT-agency search or specialized equipment",
             },
             Cherry {
                 game_mode: GameMode::None,
-                name: "Perfect Holdout".to_owned(),
-                description: "Perfect Holdout (NBA p.27): Hide a small object on your person against all but X-ray or strip search".to_owned(),
+                name: "Perfect Holdout",
+                description: "Perfect Holdout (NBA p.27): Hide a small object on your person against all but X-ray or strip search",
             },
         ]
     }
@@ -110,20 +110,101 @@ impl Cherry {
         vec![
             Cherry {
                 game_mode: GameMode::None,
-                name: "Cracker's Crypto".to_owned(),
-                description: "Cracker's Crypto (NBA p.28): 1 free rating point in Cryptography".to_owned()},
+                name: "Cracker's Crypto",
+                description: "Cracker's Crypto (NBA p.28): 1 free rating point in Cryptography"},
             Cherry {
                 game_mode: GameMode::None,
-                name: "Head of a pin".to_owned(),
-                description: "Head of a PIN (p.39): If you see others input passwords, you can guess them later".to_owned(),
+                name: "Head of a pin",
+                description: "Head of a PIN (p.39): If you see others input passwords, you can guess them later",
             },
             Cherry {
                 game_mode: GameMode::Dust,
-                name: "Mr.Clean".to_owned(),
-                description: "Mr. Clean (p.39): Your smartphones and other devices are untraceable (Dust mode)".to_owned(),
+                name: "Mr.Clean",
+                description: "Mr. Clean (p.39): Your smartphones and other devices are untraceable (Dust mode)",
             },
         ]
     }
+    pub fn disguise() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Connected Cover",
+                description: "Connected Cover (NBA p.28): Use Cover to create an identity already known to an NPC"
+            },
+            Cherry {
+                game_mode: GameMode::Dust,
+                name: "Innocent Bystander",
+                description:  "Innocent Bystander (p.40): May spend Disguise pool points on Surveillance tests (Dust mode)",
+            },
+            Cherry {
+                game_mode: GameMode::Dust,
+                name: "Just the Help",
+                description: "Just the Help (p.40): In servants' or workman’s uniform, lower Disguise Difficulties by 1 (Dust mode)",
+            }
+        ]
+    }
+    pub fn driving() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::Dust,
+                name: "Defensive Driving",
+                description: "Defensive Driving (p.40): +1 to Hit Threshold and to Difficulty of ramming, etc. for you, passengers, and vehicle (Dust mode)", 
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Grand Theft Auto",
+                description:   "Grand Theft Auto (NBA p.29): Spend 1 Driving to steal any standard vehicle you can drive",
+            }
+        ]
+    }
+    pub fn explosive_devices() -> Vec<Cherry> {
+       vec![
+        Cherry {
+            game_mode: GameMode::None,
+            name: "Bigger Ban",
+            description:      "Bigger Bang (NBA p.29): Spend 3 Explosive Devices points to add a die of damage to an explosive charge",
+        },
+        Cherry {
+            game_mode: GameMode::None,
+            name: "Maestro of Destruction",
+            description: "Maestro of Destruction (p.41): Your bombs cannot be disarmed without your aid or wiring diagram",
+        }
+       ] 
+    }
+    pub fn filch() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::None,
+                name: "A Lift in Time Saves Nine",
+                description: "A Lift in Time Saves Nine (p.41): Retroactively declare you lifted a small object in a previous scene",
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "No Slipups",
+                description:  "No Slipups (NBA p.29): After failing a Filch test, spend 2 Filch to bump the result by 1",
+            }
+        ]
+    }
+    pub fn gambling() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::None,
+                name: "All In",
+            description:       "All In (p.42): Once per session, refresh any General pool by up to 3",
+            },
+            Cherry {
+                game_mode: GameMode::Dust,
+                name: "Everybody's Got a Tell",
+                description:"Everybody's Got a Tell (p.42): 1 free rating point in Bullshit Detector (Dust mode)",
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Luck of the Devil",
+                description:                   "Luck of the Devil (NBA p.30): Roll one die at session start; replace any one die result later with that roll",
+            },
+        ]
+    }
+
 }
 
 
@@ -181,7 +262,17 @@ pub struct GeneralSkills {
 }
 
 impl GeneralSkills {
-    pub fn new() -> Self {
+    // pub fn new() -> Self {
+
+    // }
+    pub fn set_mos(&mut self, skill_name: &str) {
+        todo!()
+    }
+}
+
+
+/*
+
         Self {
             athletics: GeneralSkill::new(
                 "Athletics",
@@ -211,15 +302,6 @@ impl GeneralSkills {
             disguise: GeneralSkill::new(
                 "Disguise",
                 vec![
-                    Cherry::new(
-                        "Connected Cover (NBA p.28): Use Cover to create an identity already known to an NPC",
-                    ),
-                    Cherry::new(
-                        "Innocent Bystander (p.40): May spend Disguise pool points on Surveillance tests (Dust mode)",
-                    ),
-                    Cherry::new(
-                        "Just the Help (p.40): In servants' or workman’s uniform, lower Disguise Difficulties by 1 (Dust mode)",
-                    ),
                 ],
                 vec![
                     Maneuver::new("Alibi (p.49)"),
@@ -229,14 +311,6 @@ impl GeneralSkills {
             driving: GeneralSkill::new(
                 "Driving",
                 vec![
-                    Cherry::new(
-                        "Defensive Driving (p.40): +1 to Hit Threshold and to Difficulty of ramming, etc. for you, passengers, and vehicle (Dust mode)",
-                    ),
-                    Cherry::new(
-                        "Grand Theft Auto (NBA p.29): Spend 1 Driving to steal any standard vehicle you can drive",
-                    ),
-                ],
-                vec![
                     Maneuver::new("Gear Devil (NBA p.56)"),
                     Maneuver::new("Signature Wheels (p.52)"),
                 ],
@@ -244,24 +318,13 @@ impl GeneralSkills {
             explosive_devices: GeneralSkill::new(
                 "Explosive Devices",
                 vec![
-                    Cherry::new(
-                        "Bigger Bang (NBA p.29): Spend 3 Explosive Devices points to add a die of damage to an explosive charge",
-                    ),
-                    Cherry::new(
-                        "Maestro of Destruction (p.41): Your bombs cannot be disarmed without your aid or wiring diagram",
-                    ),
+
                 ],
                 vec![], // No maneuvers for Explosive Devices
             ),
             filch: GeneralSkill::new(
                 "Filch",
                 vec![
-                    Cherry::new(
-                        "A Lift in Time Saves Nine (p.41): Retroactively declare you lifted a small object in a previous scene",
-                    ),
-                    Cherry::new(
-                        "No Slipups (NBA p.29): After failing a Filch test, spend 2 Filch to bump the result by 1",
-                    ),
                 ],
                 vec![], // No maneuvers for Filch
             ),
@@ -269,13 +332,13 @@ impl GeneralSkills {
                 "Gambling",
                 vec![
                     Cherry::new(
-                        "All In (p.42): Once per session, refresh any General pool by up to 3",
+                      
                     ),
                     Cherry::new(
-                        "Everybody's Got a Tell (p.42): 1 free rating point in Bullshit Detector (Dust mode)",
+                        
                     ),
                     Cherry::new(
-                        "Luck of the Devil (NBA p.30): Roll one die at session start; replace any one die result later with that roll",
+      
                     ),
                 ],
                 vec![Maneuver::new("Card Up the Sleeve (p.50)")],
@@ -446,34 +509,4 @@ impl GeneralSkills {
                 ],
             ),
         }
-    }
-    pub fn set_mos(&mut self, skill_name: &str) {
-        let mut all_skills = [
-            &mut self.athletics,
-            &mut self.conceal,
-            &mut self.cover,
-            &mut self.digital_intrusion,
-            &mut self.disguise,
-            &mut self.driving,
-            &mut self.explosive_devices,
-            &mut self.filch,
-            &mut self.gambling,
-            &mut self.hand_to_hand,
-            &mut self.infiltration,
-            &mut self.mechanics,
-            &mut self.medic,
-            &mut self.network,
-            &mut self.piloting,
-            &mut self.preparedness,
-            &mut self.sense_trouble,
-            &mut self.shooting,
-            &mut self.shrink,
-            &mut self.surveillance,
-            &mut self.weapons,
-        ];
-
-        for skill in &mut all_skills {
-            skill.is_mos = skill.skill == skill_name;
-        }
-    }
-}
+*/

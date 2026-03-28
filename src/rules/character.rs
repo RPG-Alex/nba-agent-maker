@@ -1,42 +1,12 @@
-use crate::rules::{general_skills::*, investigative_skills::*, modes::GameModes};
+
+use crate::rules::{general_skills::*, investigative_skills::*, modes::GameMode};
 use serde::{Deserialize, Serialize};
 #[derive(Clone, PartialEq)]
 pub struct MOS;
 
 impl MOS {
     pub fn get_mos(general_skills: &GeneralSkills) -> String {
-        [
-            &general_skills.athletics,
-            &general_skills.conceal,
-            &general_skills.cover,
-            &general_skills.digital_intrusion,
-            &general_skills.disguise,
-            &general_skills.driving,
-            &general_skills.explosive_devices,
-            &general_skills.filch,
-            &general_skills.gambling,
-            &general_skills.hand_to_hand,
-            &general_skills.infiltration,
-            &general_skills.mechanics,
-            &general_skills.medic,
-            &general_skills.network,
-            &general_skills.piloting,
-            &general_skills.preparedness,
-            &general_skills.sense_trouble,
-            &general_skills.shooting,
-            &general_skills.shrink,
-            &general_skills.surveillance,
-            &general_skills.weapons,
-        ]
-        .iter()
-        .find_map(|skill| {
-            if skill.is_mos {
-                Some(skill.skill.clone())
-            } else {
-                None
-            }
-        })
-        .unwrap_or_else(|| "None".to_string())
+        todo!()
     }
 }
 
@@ -57,7 +27,7 @@ pub struct Character {
     pub heat_level: u8,
     pub general_points: u16,
     pub investigative_points: u16,
-    pub game_modes: Vec<GameModes>,
+    pub game_modes: Vec<GameMode>,
 
     // Abilities
     pub general_skills: GeneralSkills,
@@ -66,32 +36,12 @@ pub struct Character {
 
 impl Character {
     pub fn get_mos(&self) -> &GeneralSkill {
-        &self.mos
+        todo!()
     }
 }
 
 impl Default for Character {
     fn default() -> Self {
-        let general_skills = GeneralSkills::new();
-        let mos = MOS::get_mos(&general_skills);
-        Self {
-            agent_name: String::new(),
-            mos: GeneralSkill::Athletics,
-            drive: String::new(),
-            handler: String::new(),
-            professional_role: String::new(),
-            backgrounds: Vec::new(),
-            symbol: String::new(),
-            solace: String::new(),
-            safety: String::new(),
-            health: 4,
-            stability: 4,
-            heat_level: 0,
-            general_points: 70,
-            investigative_points: 0,
-            game_modes: Vec::new(),
-            general_skills: GeneralSkills::new(),
-            investigative_abilities: InvestigativeAbilities::new(),
-        }
+        Self { agent_name: todo!(), mos: todo!(), drive: todo!(), handler: todo!(), professional_role: todo!(), backgrounds: todo!(), symbol: todo!(), solace: todo!(), safety: todo!(), health: todo!(), stability: todo!(), heat_level: todo!(), general_points: todo!(), investigative_points: todo!(), game_modes: todo!(), general_skills: todo!(), investigative_abilities: todo!() }
     }
 }

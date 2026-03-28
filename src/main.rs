@@ -1,4 +1,4 @@
-use codee::{string::JsonSerdeCodec, *};
+use codee::{string::JsonSerdeCodec};
 use leptos::prelude::*;
 use leptos_use::storage::use_local_storage;
 use rules::character::Character;
