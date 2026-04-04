@@ -200,8 +200,22 @@ impl Cherry {
             Cherry {
                 game_mode: GameMode::None,
                 name: "Luck of the Devil",
-                description:                   "Luck of the Devil (NBA p.30): Roll one die at session start; replace any one die result later with that roll",
+                description: "Luck of the Devil (NBA p.30): Roll one die at session start; replace any one die result later with that roll",
             },
+        ]
+    }
+    pub fn hand_to_hand() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::Dust,
+                name: "Eye of the Tiger",
+                description: "Eye of the Tiger (NBA p.31): Spend 1 HtH to gauge opponent’s HtH rating level (Dust mode)"
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Haymaker",
+                description:  "Haymaker (p.43): Roll two dice for damage; pick the higher, then spend 1 HtH per extra damage point",
+            }
         ]
     }
 
