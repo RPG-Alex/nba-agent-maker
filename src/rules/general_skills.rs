@@ -218,7 +218,163 @@ impl Cherry {
             }
         ]
     }
-
+    pub fn infiltration() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Bono Cane",
+                description: "Bono Cane (p.43): Spend 1 Infiltration to bypass guard dogs",
+            },
+                        Cherry {
+                game_mode: GameMode::None,
+                name: "Escape Artist",
+                description: "Escape Artist (p.44): Given enough time unobserved, you can escape any restraint"
+            },
+                        Cherry {
+                game_mode: GameMode::None,
+                name: "Open Sesame",
+                description: "Open Sesame (NBA p.31): Open or bypass any normal or commercial lock or alarm without a test",
+            },
+        ]
+    }
+    pub fn mechanics() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Demolition Man",
+                description: "Demolition Man (p.44): Spend Mechanics on Explosive Devices tests to rig vehicles or machinery to explode"
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Swiss Army Prep",
+                description: "Swiss Army Prep (NBA p.31): May spend Mechanics on Preparedness tests with jaunty narration",
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Trapmaster",
+                description: "Trapmaster (p.44): Spend 2 Mechanics to inflict two instances of damage with a non-explosive booby trap",
+            }
+        ]
+    }
+    pub fn medic() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::Dust,
+                name: "Medical School of Hard Knocks",
+                description: "Medical School of Hard Knocks (NBA p.31): 1 free rating point in Diagnosis (Dust mode)"
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "On Your Feet",
+                description: "On Your Feet (p.45): Spend Medic points to give another agent a bonus to their Consciousness roll"
+            }
+        ]
+    }
+    pub fn network() -> Vec<Cherry> {
+        vec![]
+    }
+    pub fn piloting() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Grand Theft Aero or Aqua",
+                description: "Grand Theft Aero or Aqua (NBA p.33): Spend 1 Piloting to steal an operable standard vehicle; forge flight plans/port documents"
+            },
+            Cherry {
+                game_mode: GameMode::Dust,
+                name: "Move Around the Cabin",
+                description: "Move Around the Cabin (p.45): On a boat/aircraft, -1 Difficulty to Athletics tests and to foe’s Hit Threshold when you attack with Hand to Hand or Weapons (Dust mode)"
+            }
+        ]
+    }
+    pub fn preparedness() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Check Your Other Left Pocket",
+                description: "Check Your Other Left Pocket (p.45): May spend Preparedness on behalf of other players"
+            },
+            Cherry {
+                game_mode: GameMode::Dust,
+                name: "Hoarder",
+                description: "Hoarder (p.45): Lower all Cache test (NBA p.94) Difficulties by 1 (Dust mode)"
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "In the Nick of Time",
+                description: "In the Nick of Time (NBA p.33): Retroactively plan for actions as needed (roll still required)"
+            }
+        ]
+    }
+    pub fn sense_trouble() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Combat Intuition",
+                description: "Combat Intuition (NBA p.34): Use Sense Trouble instead of another ability to determine action order"
+            },
+            Cherry {
+                game_mode: GameMode::Dust,
+                name: "Hawkeye",
+                description: "Hawkeye (p.46): 1 free rating point in Notice (Dust mode)"
+            }
+        ]
+    }
+    pub fn shooting() -> Vec<Cherry> {
+        vec![]
+    }
+    pub fn shrink() -> Vec<Cherry> {
+        vec![
+                    Cherry {
+            game_mode: GameMode::None,
+            name: "Anger Management",
+            description: "Anger Management (p.47): Make a Shrink test to anger or enrage a subject known to you"
+        },
+        Cherry {
+            game_mode: GameMode::Dust,
+            name: "Talk It Out",
+            description: "Talk It Out (NBA p.34): 1 free rating point in Bullshit Detector, Flattery, Interrogation, or Reassurance (Dust mode)"
+        },
+        Cherry {
+            game_mode: GameMode::None,
+            name: "Talking Cure",
+            description: "Talking Cure (p.47): Mental illness tests are at -1 Difficulty; restore 3 Stability for 2 Shrink spent on triage"
+        }
+        ]
+    }
+    pub fn surveillance() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Face in the Crowd",
+                description: "Face in the Crowd (p.47): Losing your quarry doesn't blow your cover"
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Tail Lights",
+                description: "Tail Lights (p.47): May spend Driving on Surveillance tests while in a moving vehicle"
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "The Wire",
+                description: "The Wire (NBA p.35): 1 free rating point in Electronic Surveillance"
+            }
+        ]
+    }
+    pub fn weapons() -> Vec<Cherry> {
+        vec![
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Quincey Morris",
+                description: "Quincey Morris' Bowie Knife (NBA p.35): Throw balanced hand weapons within Near range at no penalty"
+            },
+            Cherry {
+                game_mode: GameMode::None,
+                name: "Riposte",
+                description: "Riposte (p.48): After an attacker rolls a 1 and misses, spend Weapons points to do damage up to your weapon’s max"
+            }
+        ]
+    }
 }
 
 
