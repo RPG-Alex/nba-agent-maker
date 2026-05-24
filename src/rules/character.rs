@@ -1,5 +1,8 @@
-
-use crate::rules::{general_skills::*, investigative_skills::*, modes::GameMode};
+use crate::rules::{
+    general_skills::{skill::GeneralSkill, *},
+    investigative_skills::*,
+    modes::GameMode,
+};
 use serde::{Deserialize, Serialize};
 #[derive(Clone, PartialEq)]
 pub struct MOS;
@@ -42,6 +45,24 @@ impl Character {
 
 impl Default for Character {
     fn default() -> Self {
-        Self { agent_name: todo!(), mos: todo!(), drive: todo!(), handler: todo!(), professional_role: todo!(), backgrounds: todo!(), symbol: todo!(), solace: todo!(), safety: todo!(), health: todo!(), stability: todo!(), heat_level: todo!(), general_points: todo!(), investigative_points: todo!(), game_modes: todo!(), general_skills: todo!(), investigative_abilities: todo!() }
+        Self {
+            agent_name: todo!(),
+            mos: todo!(),
+            drive: todo!(),
+            handler: todo!(),
+            professional_role: todo!(),
+            backgrounds: todo!(),
+            symbol: todo!(),
+            solace: todo!(),
+            safety: todo!(),
+            health: todo!(),
+            stability: todo!(),
+            heat_level: todo!(),
+            general_points: todo!(),
+            investigative_points: todo!(),
+            game_modes: todo!(),
+            general_skills: todo!(),
+            investigative_abilities: todo!(),
+        }
     }
 }
