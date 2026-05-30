@@ -4,13 +4,10 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-codee = { version = "0.3.5", features = ["json_serde"] }
-leptos = { version = "0.8.17", features = ["csr"] }
-leptos-use = "0.18.3"
-leptos_meta = "0.8.6"
+gloo = "0.12.0"
+
 serde = "1.0.228"
-
-
-
-[package.metadata.leptos]
-style-file = "style.css"
+state = "0.6.0"
+strum = "0.28.0"
+web-sys = "0.3.99"
+yew = { version = "0.23.0", features = ["csr", "serde"] }
