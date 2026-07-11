@@ -1,7 +1,5 @@
 use crate::rules::{
-    general_skills::{skill::GeneralSkill, *},
-    investigative_skills::*,
-    modes::GameMode,
+    general_skills::{name::SkillName, skill::GeneralSkill, *}, investigative_skills::*, modes::GameMode,
 };
 use serde::{Deserialize, Serialize};
 #[derive(Clone, PartialEq)]
@@ -17,7 +15,6 @@ impl MOS {
 pub struct Character {
     // Agent Info (Personality and Dossier)
     pub agent_name: String,
-    pub mos: GeneralSkill,
     pub drive: String,
     pub handler: String,
     pub professional_role: String,
@@ -37,32 +34,26 @@ pub struct Character {
     pub investigative_abilities: InvestigativeAbilities,
 }
 
-impl Character {
-    pub fn get_mos(&self) -> &GeneralSkill {
-        todo!()
-    }
-}
 
 impl Default for Character {
     fn default() -> Self {
         Self {
-            agent_name: todo!(),
-            mos: todo!(),
-            drive: todo!(),
-            handler: todo!(),
-            professional_role: todo!(),
-            backgrounds: todo!(),
-            symbol: todo!(),
-            solace: todo!(),
-            safety: todo!(),
-            health: todo!(),
-            stability: todo!(),
-            heat_level: todo!(),
-            general_points: todo!(),
-            investigative_points: todo!(),
-            game_modes: todo!(),
-            general_skills: todo!(),
-            investigative_abilities: todo!(),
+            agent_name: String::new(),
+            drive: String::new(),
+            handler: String::new(),
+            professional_role: String::new(),
+            backgrounds: Vec::new(),
+            symbol: String::new(),
+            solace: String::new(),
+            safety: String::new(),
+            health: 4,
+            stability: 4,
+            heat_level: 1,
+            general_points: 70,
+            investigative_points: 20, // default to a full table of 5 players
+            game_modes: Vec::new(),
+            general_skills: GeneralSkills::new(),
+            investigative_abilities: InvestigativeAbilities::new(),
         }
     }
 }
