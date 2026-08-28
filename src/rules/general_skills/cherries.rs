@@ -172,7 +172,7 @@ impl Cherry {
                 description: "Hard to Hit (NBA p.27): +1 to your Hit Threshold in Combat (Dust mode)",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::RollThroughThePain,
                 description: "Roll Through the Pain (p.38): Spend Health to Succeed at failed Athletics Tests",
             },
@@ -186,12 +186,12 @@ impl Cherry {
     pub fn conceal() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::BugStasher,
                 description: "Bug Stasher (p.39): Hide a bug against all but SIGINT-agency search or specialized equipment",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::PerfectHoldout,
                 description: "Perfect Holdout (NBA p.27): Hide a small object on your person against all but X-ray or strip search",
             },
@@ -203,12 +203,12 @@ impl Cherry {
     pub fn digital_intrusion() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::CrackersCrypto,
                 description: "Cracker's Crypto (NBA p.28): 1 free rating point in Cryptography",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::HeadOfAPin,
                 description: "Head of a PIN (p.39): If you see others input passwords, you can guess them later",
             },
@@ -222,7 +222,7 @@ impl Cherry {
     pub fn disguise() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::ConnectedCover,
                 description: "Connected Cover (NBA p.28): Use Cover to create an identity already known to an NPC",
             },
@@ -246,7 +246,7 @@ impl Cherry {
                 description: "Defensive Driving (p.40): +1 to Hit Threshold and to Difficulty of ramming, etc. for you, passengers, and vehicle (Dust mode)",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::GrandTheftAeroOrAqua,
                 description: "Grand Theft Auto (NBA p.29): Spend 1 Driving to steal any standard vehicle you can drive",
             },
@@ -255,12 +255,12 @@ impl Cherry {
     pub fn explosive_devices() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::BiggerBang,
                 description: "Bigger Bang (NBA p.29): Spend 3 Explosive Devices points to add a die of damage to an explosive charge",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::MaestroOfDestruction,
                 description: "Maestro of Destruction (p.41): Your bombs cannot be disarmed without your aid or wiring diagram",
             },
@@ -269,12 +269,12 @@ impl Cherry {
     pub fn filch() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::ALiftInTimeSavesNine,
                 description: "A Lift in Time Saves Nine (p.41): Retroactively declare you lifted a small object in a previous scene",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::NoSlipups,
                 description: "No Slipups (NBA p.29): After failing a Filch test, spend 2 Filch to bump the result by 1",
             },
@@ -283,7 +283,7 @@ impl Cherry {
     pub fn gambling() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::AllIn,
                 description: "All In (p.42): Once per session, refresh any General pool by up to 3",
             },
@@ -293,7 +293,7 @@ impl Cherry {
                 description: "Everybody's Got a Tell (p.42): 1 free rating point in Bullshit Detector (Dust mode)",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::LuckOfTheDevil,
                 description: "Luck of the Devil (NBA p.30): Roll one die at session start; replace any one die result later with that roll",
             },
@@ -307,7 +307,7 @@ impl Cherry {
                 description: "Eye of the Tiger (NBA p.31): Spend 1 HtH to gauge opponent’s HtH rating level (Dust mode)",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::Haymaker,
                 description: "Haymaker (p.43): Roll two dice for damage; pick the higher, then spend 1 HtH per extra damage point",
             },
@@ -316,17 +316,17 @@ impl Cherry {
     pub fn infiltration() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::BonoCane,
                 description: "Bono Cane (p.43): Spend 1 Infiltration to bypass guard dogs",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::EscapeArtist,
                 description: "Escape Artist (p.44): Given enough time unobserved, you can escape any restraint",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::OpenSesame,
                 description: "Open Sesame (NBA p.31): Open or bypass any normal or commercial lock or alarm without a test",
             },
@@ -335,17 +335,17 @@ impl Cherry {
     pub fn mechanics() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::DemolitionMan,
                 description: "Demolition Man (p.44): Spend Mechanics on Explosive Devices tests to rig vehicles or machinery to explode",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::SwissArmyPrep,
                 description: "Swiss Army Prep (NBA p.31): May spend Mechanics on Preparedness tests with jaunty narration",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::Trapmaster,
                 description: "Trapmaster (p.44): Spend 2 Mechanics to inflict two instances of damage with a non-explosive booby trap",
             },
@@ -359,7 +359,7 @@ impl Cherry {
                 description: "Medical School of Hard Knocks (NBA p.31): 1 free rating point in Diagnosis (Dust mode)",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::OnYourFeet,
                 description: "On Your Feet (p.45): Spend Medic points to give another agent a bonus to their Consciousness roll",
             },
@@ -371,7 +371,7 @@ impl Cherry {
     pub fn piloting() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::GrandTheftAeroOrAqua,
                 description: "Grand Theft Aero or Aqua (NBA p.33): Spend 1 Piloting to steal an operable standard vehicle; forge flight plans/port documents",
             },
@@ -385,7 +385,7 @@ impl Cherry {
     pub fn preparedness() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::CheckYourOtherLeftPocket,
                 description: "Check Your Other Left Pocket (p.45): May spend Preparedness on behalf of other players",
             },
@@ -395,7 +395,7 @@ impl Cherry {
                 description: "Hoarder (p.45): Lower all Cache test (NBA p.94) Difficulties by 1 (Dust mode)",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::InTheNickOfTime,
                 description: "In the Nick of Time (NBA p.33): Retroactively plan for actions as needed (roll still required)",
             },
@@ -404,7 +404,7 @@ impl Cherry {
     pub fn sense_trouble() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::CombatIntuition,
                 description: "Combat Intuition (NBA p.34): Use Sense Trouble instead of another ability to determine action order",
             },
@@ -421,7 +421,7 @@ impl Cherry {
     pub fn shrink() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::AngerManagement,
                 description: "Anger Management (p.47): Make a Shrink test to anger or enrage a subject known to you",
             },
@@ -431,7 +431,7 @@ impl Cherry {
                 description: "Talk It Out (NBA p.34): 1 free rating point in Bullshit Detector, Flattery, Interrogation, or Reassurance (Dust mode)",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::TalkingCure,
                 description: "Talking Cure (p.47): Mental illness tests are at -1 Difficulty; restore 3 Stability for 2 Shrink spent on triage",
             },
@@ -440,17 +440,17 @@ impl Cherry {
     pub fn surveillance() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::FaceInTheCrowd,
                 description: "Face in the Crowd (p.47): Losing your quarry doesn't blow your cover",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::TailLights,
                 description: "Tail Lights (p.47): May spend Driving on Surveillance tests while in a moving vehicle",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::TheWire,
                 description: "The Wire (NBA p.35): 1 free rating point in Electronic Surveillance",
             },
@@ -459,12 +459,12 @@ impl Cherry {
     pub fn weapons() -> &'static [Cherry] {
         &[
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::QuinceyMorris,
                 description: "Quincey Morris' Bowie Knife (NBA p.35): Throw balanced hand weapons within Near range at no penalty",
             },
             Cherry {
-                game_mode: GameMode::None,
+                game_mode: GameMode::Base,
                 name: CherryId::Riposte,
                 description: "Riposte (p.48): After an attacker rolls a 1 and misses, spend Weapons points to do damage up to your weapon’s max",
             },
