@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::rules::general_skills::{ name::SkillName, skill::GeneralSkill};
+use crate::rules::general_skills::{name::SkillName, skill::GeneralSkill};
 
 pub mod cherries;
 pub mod maneuvers;

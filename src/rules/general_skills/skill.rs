@@ -1,9 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::rules::general_skills::{
-    cherries::CherryId,
-    name::SkillName,
-};
+use crate::rules::general_skills::{cherries::CherryId, name::SkillName};
 
 #[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
 pub struct GeneralSkill {

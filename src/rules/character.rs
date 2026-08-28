@@ -1,5 +1,7 @@
 use crate::rules::{
-    general_skills::{name::SkillName, skill::GeneralSkill, *}, investigative_skills::*, modes::GameMode,
+    general_skills::{name::SkillName, skill::GeneralSkill, *},
+    investigative_skills::*,
+    modes::GameMode,
 };
 use serde::{Deserialize, Serialize};
 #[derive(Clone, PartialEq)]
@@ -33,7 +35,6 @@ pub struct Character {
     pub general_skills: GeneralSkills,
     pub investigative_abilities: InvestigativeAbilities,
 }
-
 
 impl Default for Character {
     fn default() -> Self {

@@ -55,33 +55,32 @@ impl Display for SkillName {
     }
 }
 
-
 impl SkillName {
     pub const ALL: [SkillName; 21] = [
-            SkillName::Athletics,
-            SkillName::Conceal,
-            SkillName::Cover,
-            SkillName::DigitalIntrusion,
-            SkillName::Disguise,
-            SkillName::Driving,
-            SkillName::ExplosiveDevices,
-            SkillName::Filch,
-            SkillName::Gambling,
-            SkillName::HandToHand,
-            SkillName::Infiltration,
-            SkillName::Mechanics,
-            SkillName::Medic,
-            SkillName::Network,
-            SkillName::Piloting,
-            SkillName::Preparedness,
-            SkillName::SenseTrouble,
-            SkillName::Shooting,
-            SkillName::Shrink,
-            SkillName::Surveillance,
-            SkillName::Weapons,
+        SkillName::Athletics,
+        SkillName::Conceal,
+        SkillName::Cover,
+        SkillName::DigitalIntrusion,
+        SkillName::Disguise,
+        SkillName::Driving,
+        SkillName::ExplosiveDevices,
+        SkillName::Filch,
+        SkillName::Gambling,
+        SkillName::HandToHand,
+        SkillName::Infiltration,
+        SkillName::Mechanics,
+        SkillName::Medic,
+        SkillName::Network,
+        SkillName::Piloting,
+        SkillName::Preparedness,
+        SkillName::SenseTrouble,
+        SkillName::Shooting,
+        SkillName::Shrink,
+        SkillName::Surveillance,
+        SkillName::Weapons,
     ];
 
-        pub const fn index(self) -> usize {
+    pub const fn index(self) -> usize {
         match self {
             SkillName::Athletics => 0,
             SkillName::Conceal => 1,

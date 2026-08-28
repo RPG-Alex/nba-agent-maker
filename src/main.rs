@@ -1,10 +1,7 @@
-
 mod rules;
 mod views;
 
-fn main() {
-    
-}
+fn main() {}
 
 /*
     TODO:
