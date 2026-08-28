@@ -3,7 +3,6 @@ use crate::views::investigative_abilities::academic::{
     history::*, human_terrain::*, languages::*, law::*, military_science::*, occult_studies::*,
     research::*, vampirology::*,
 };
-use leptos::prelude::*;
 
 #[component]
 pub fn AcademicAbilities() -> impl IntoView {

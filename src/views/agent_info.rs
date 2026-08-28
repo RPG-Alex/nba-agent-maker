@@ -2,7 +2,6 @@ use crate::rules::{
     character::Character,
     drives::get_drives,
 };
-use leptos::prelude::*;
 
 #[component]
 pub fn AgentInfo() -> impl IntoView {
