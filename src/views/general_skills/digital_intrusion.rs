@@ -1,5 +1,4 @@
 use crate::rules::character::Character;
-use leptos::prelude::*;
 
 #[component]
 pub fn DigitalIntrusion() -> impl IntoView {

@@ -5,7 +5,6 @@ use crate::views::general_skills::{
     surveillance::*, weapons::*,
 };
 
-use leptos::prelude::*;
 #[component]
 pub fn GeneralSkillsInfo() -> impl IntoView {
     view! {
