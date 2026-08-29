@@ -1,9 +1,11 @@
+use yew::prelude::*;
+use crate::html;
 use crate::rules::character::Character;
 
 #[component]
-pub fn StatsView() -> impl IntoView {
+pub fn StatsView() -> Html {
 
-    view! {
+    html! {
         <div class="stats-view">
             <div class="stat-item">
                 <label for="health">"Health: "</label>

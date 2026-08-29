@@ -1,10 +1,12 @@
+use yew::prelude::*;
+
 use crate::rules::{
     character::Character,
     drives::get_drives,
 };
 
 #[component]
-pub fn AgentInfo() -> impl IntoView {
+pub fn AgentInfo() -> Html {
     // agent field togglers
     let (name, set_name) = signal(true);
     let (handler, set_handler) = signal(true);
