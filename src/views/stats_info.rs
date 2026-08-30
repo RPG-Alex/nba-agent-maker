@@ -14,7 +14,6 @@ pub fn StatsView() -> Html {
 
     let on_health_input = {
         let health_message = health_message.clone();
-        let stability_message = stability_message.clone();
         let character = character.clone();
 
         Callback::from(move |event: InputEvent| {
@@ -44,6 +43,8 @@ pub fn StatsView() -> Html {
                 let mut updated = (*character).clone();
                 updated.stability = stability;
                 character.set(updated);
+
+                stability_message.set(String::new());
             } else {
                 input.set_value(&character.stability.to_string());
 
