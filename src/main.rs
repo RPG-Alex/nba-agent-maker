@@ -1,12 +1,13 @@
 mod rules;
-// mod views;
+mod views;
 
 use yew::prelude::*;
 use gloo_storage::{LocalStorage, Storage};
-use crate::rules::character::Character;
-
+use crate::{rules::character::Character, views::agent_info};
+use views::stats_info::StatsView;
 const STORAGE_KEY: &str = "character-sheet";
 
+type CharacterContext = UseStateHandle<Character>;
 
 #[component]
 fn App() -> Html {
@@ -22,7 +23,11 @@ fn App() -> Html {
         });
     }
     html! {
-        {character.agent_name.clone()}
+        <ContextProvider<CharacterContext> context={character.clone()}>
+            <StatsView />
+            {" total health: " }{character.health}
+        </ContextProvider<CharacterContext>>
+        
     }
 }
 
