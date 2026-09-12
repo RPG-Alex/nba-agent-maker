@@ -4,7 +4,9 @@ mod views;
 use yew::prelude::*;
 use gloo_storage::{LocalStorage, Storage};
 use crate::{rules::character::Character, views::agent_info};
-use views::stats_info::StatsView;
+use views::stats_info::StatsInfo;
+
+use self::views::agent_info::AgentInfo;
 const STORAGE_KEY: &str = "character-sheet";
 
 type CharacterContext = UseStateHandle<Character>;
@@ -24,8 +26,8 @@ fn App() -> Html {
     }
     html! {
         <ContextProvider<CharacterContext> context={character.clone()}>
-            <StatsView />
-            {" total health: " }{character.health}
+            <AgentInfo />
+            <StatsInfo />
         </ContextProvider<CharacterContext>>
         
     }

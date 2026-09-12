@@ -27,13 +27,34 @@ pub struct Character {
     pub health: i8,
     pub stability: i8,
     pub heat_level: u8,
-    pub general_points: u16,
-    pub investigative_points: u16,
+    pub general_points_total: u16,
+    pub general_points_spent: u16,
+    pub investigative_points_total: u16,
+    pub investigative_points_spent: u16,
     pub game_modes: Vec<GameMode>,
 
     // Abilities
     pub general_skills: GeneralSkills,
     pub investigative_abilities: InvestigativeAbilities,
+}
+
+impl Character {
+        pub(crate) fn investigative_points_available(&self) -> u16 {
+        self.investigative_points_total - self.investigative_points_spent
+    }
+    
+    pub(crate) fn general_points_available(&self) -> u16 {
+        self.general_points_total - self.general_points_spent
+    }
+
+    pub(crate) fn spend_investigate_points(&mut self, spent: u16) -> Result<(), ()> {
+        if spent > self.investigative_points_available() {
+            Err(())
+        } else {
+            self.investigative_points_spent += spent;
+            Ok(())
+        }
+    }
 }
 
 impl Default for Character {
@@ -50,8 +71,10 @@ impl Default for Character {
             health: 4,
             stability: 4,
             heat_level: 1,
-            general_points: 70,
-            investigative_points: 20, // default to a full table of 5 players
+            general_points_total: 70, 
+            general_points_spent: 0,
+            investigative_points_total: 20, // default to a full table of 5 players
+            investigative_points_spent: 0,
             game_modes: Vec::new(),
             general_skills: GeneralSkills::new(),
             investigative_abilities: InvestigativeAbilities::new(),

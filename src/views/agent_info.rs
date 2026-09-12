@@ -1,14 +1,47 @@
 use yew::prelude::*;
+use web_sys::HtmlInputElement;
 
 use crate::rules::{
-    drives::get_drives,
+    character::Character, drives::get_drives,
 };
 
 #[component]
 pub fn AgentInfo() -> Html {
     let drives = get_drives();
+    let character = use_context::<UseStateHandle<Character>>().expect("Character context not found");
+
+    let on_name_input = Callback::from(move | event: InputEvent| {
+
+    });
+
+    let on_handler_input = Callback::from(move |event: InputEvent| {
+
+    });
+
+    let on_role_input = Callback::from(move |event: InputEvent| {
+
+    });
+
+    let on_background_input = Callback::from(move |event: InputEvent| {
+
+    });
+
+    let on_investigative_points_input = Callback::from(move |event: InputEvent| {
+
+    });
+
+    let on_general_points_input = Callback::from(move |event: InputEvent| {
+
+    });
 
     html!{
+        <section id="agent-info">
+            <div>
+                <div>
+                    <span>{"General Points Spent: "}</span>
+                </div>
+            </div>
+        </section>
     }
 }
 

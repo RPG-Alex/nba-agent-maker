@@ -4,7 +4,7 @@ use yew::prelude::*;
 use crate::rules::character::Character;
 
 #[component]
-pub fn StatsView() -> Html {
+pub fn StatsInfo() -> Html {
     let character = use_context::<UseStateHandle<Character>>()
         .expect("Character context not found");
 
