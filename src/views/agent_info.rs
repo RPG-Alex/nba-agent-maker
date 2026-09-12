@@ -1,50 +1,66 @@
-use yew::prelude::*;
 use web_sys::HtmlInputElement;
+use yew::prelude::*;
 
-use crate::rules::{
-    character::Character, drives::get_drives,
-};
+use crate::rules::{character::Character, drives::get_drives};
 
 #[component]
-pub fn AgentInfo() -> Html {
+pub(crate) fn AgentInfo() -> Html {
     let drives = get_drives();
-    let character = use_context::<UseStateHandle<Character>>().expect("Character context not found");
+    let character =
+        use_context::<UseStateHandle<Character>>().expect("Character context not found");
 
-    let on_name_input = Callback::from(move | event: InputEvent| {
+    let on_name_input = Callback::from(move |event: InputEvent| {});
 
-    });
+    let on_handler_input = Callback::from(move |event: InputEvent| {});
 
-    let on_handler_input = Callback::from(move |event: InputEvent| {
+    let on_role_input = Callback::from(move |event: InputEvent| {});
 
-    });
+    let on_background_input = Callback::from(move |event: InputEvent| {});
 
-    let on_role_input = Callback::from(move |event: InputEvent| {
+    let on_investigative_points_input = Callback::from(move |event: InputEvent| {});
 
-    });
+    let on_general_points_input = Callback::from(move |event: InputEvent| {});
 
-    let on_background_input = Callback::from(move |event: InputEvent| {
+    let on_agent_info_update = Callback::from(move |event: InputEvent| {});
 
-    });
+    let agent_info_editable = use_state(|| false);
 
-    let on_investigative_points_input = Callback::from(move |event: InputEvent| {
+    let update_agent_info_editable = {
+        let agent_info_editable = agent_info_editable.clone();
+        Callback::from(move |_| agent_info_editable.set(!*agent_info_editable))
+    };
 
-    });
-
-    let on_general_points_input = Callback::from(move |event: InputEvent| {
-
-    });
-
-    html!{
+    html! {
         <section id="agent-info">
             <div>
                 <div>
-                    <span>{"General Points Spent: "}</span>
+                    <span>{"General Points Spent: "}{character.general_points_spent}</span>
                 </div>
+                <div><span>{"Investigative Points Spent: "}{character.investigative_points_spent}</span></div>
+            </div>
+            <div>
+                <label for="agent-name">{"Agent Name: "}</label>
+                {
+                    if *agent_info_editable {
+                        html!(
+                            <input type="text" id="agent-name" value={character.agent_name.clone()} oninput={on_name_input} />
+                        )
+                    } else {
+                        html!(
+                            <div>
+                                <span id="agent-name">
+                                    {&character.agent_name}
+                                </span>
+                                <button onclick={update_agent_info_editable}>{"Updated Info"}</button>
+                            </div>
+                        )
+                    }
+                }
+
             </div>
         </section>
     }
 }
-
 
 // // agent field togglers
 //     let (name, set_name) = signal(true);
@@ -244,7 +260,6 @@ pub fn AgentInfo() -> Html {
 //                         }).collect::<Vec<_>>()
 //                     }}
 //             </div>
-
 
 //             <div>
 //                 <label for="symbol">"Symbol"</label>

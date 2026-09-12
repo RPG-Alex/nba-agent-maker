@@ -3,8 +3,7 @@ use yew::prelude::*;
 #[component]
 pub fn Accounting() -> Html {
     let total = 3;
-    html! {
-    }        
+    html! {}
 }
 
 // <div class="ability" id="accounting">

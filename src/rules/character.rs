@@ -5,7 +5,7 @@ use crate::rules::{
 };
 use serde::{Deserialize, Serialize};
 #[derive(Clone, PartialEq)]
-pub struct MOS;
+pub(crate) struct MOS;
 
 impl MOS {
     pub fn get_mos(general_skills: &GeneralSkills) -> String {
@@ -14,35 +14,35 @@ impl MOS {
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq)]
-pub struct Character {
+pub(crate) struct Character {
     // Agent Info (Personality and Dossier)
-    pub agent_name: String,
-    pub drive: String,
-    pub handler: String,
-    pub professional_role: String,
-    pub backgrounds: Vec<String>,
-    pub symbol: String,
-    pub solace: String,
-    pub safety: String,
-    pub health: i8,
-    pub stability: i8,
-    pub heat_level: u8,
-    pub general_points_total: u16,
-    pub general_points_spent: u16,
-    pub investigative_points_total: u16,
-    pub investigative_points_spent: u16,
-    pub game_modes: Vec<GameMode>,
+    pub(crate) agent_name: String,
+    pub(crate) drive: String,
+    pub(crate) handler: String,
+    pub(crate) professional_role: String,
+    pub(crate) backgrounds: Vec<String>,
+    pub(crate) symbol: String,
+    pub(crate) solace: String,
+    pub(crate) safety: String,
+    pub(crate) health: i8,
+    pub(crate) stability: i8,
+    pub(crate) heat_level: u8,
+    pub(crate) general_points_total: u16,
+    pub(crate) general_points_spent: u16,
+    pub(crate) investigative_points_total: u16,
+    pub(crate) investigative_points_spent: u16,
+    pub(crate) game_modes: Vec<GameMode>,
 
     // Abilities
-    pub general_skills: GeneralSkills,
-    pub investigative_abilities: InvestigativeAbilities,
+    pub(crate) general_skills: GeneralSkills,
+    pub(crate) investigative_abilities: InvestigativeAbilities,
 }
 
 impl Character {
-        pub(crate) fn investigative_points_available(&self) -> u16 {
+    pub(crate) fn investigative_points_available(&self) -> u16 {
         self.investigative_points_total - self.investigative_points_spent
     }
-    
+
     pub(crate) fn general_points_available(&self) -> u16 {
         self.general_points_total - self.general_points_spent
     }
@@ -71,7 +71,7 @@ impl Default for Character {
             health: 4,
             stability: 4,
             heat_level: 1,
-            general_points_total: 70, 
+            general_points_total: 70,
             general_points_spent: 0,
             investigative_points_total: 20, // default to a full table of 5 players
             investigative_points_spent: 0,

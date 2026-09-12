@@ -4,13 +4,13 @@ use yew::prelude::*;
 use crate::rules::character::Character;
 
 #[component]
-pub fn StatsInfo() -> Html {
-    let character = use_context::<UseStateHandle<Character>>()
-        .expect("Character context not found");
+pub(crate) fn StatsInfo() -> Html {
+    let character =
+        use_context::<UseStateHandle<Character>>().expect("Character context not found");
 
     // message for inputs
     let health_message = use_state(String::new);
-        let stability_message = use_state(String::new);
+    let stability_message = use_state(String::new);
 
     let on_health_input = {
         let health_message = health_message.clone();
@@ -27,7 +27,10 @@ pub fn StatsInfo() -> Html {
             } else {
                 input.set_value(&character.health.to_string());
 
-                health_message.set("What's the point of a health stat if you're just going to cheese it?".to_string());
+                health_message.set(
+                    "What's the point of a health stat if you're just going to cheese it?"
+                        .to_string(),
+                );
             }
         })
     };
