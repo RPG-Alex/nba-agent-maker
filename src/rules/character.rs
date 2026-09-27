@@ -36,6 +36,8 @@ pub(crate) struct Character {
     // Abilities
     pub(crate) general_skills: GeneralSkills,
     pub(crate) investigative_abilities: InvestigativeAbilities,
+
+    pub(crate) editable: bool,
 }
 
 impl Character {
@@ -78,6 +80,7 @@ impl Default for Character {
             game_modes: Vec::new(),
             general_skills: GeneralSkills::new(),
             investigative_abilities: InvestigativeAbilities::new(),
+            editable: false,
         }
     }
 }
