@@ -25,12 +25,13 @@ fn App() -> Html {
         });
     }
     html! {
+        <div id="character-sheet">
         <ContextProvider<CharacterContext> context={character.clone()}>
             <AgentInfo />
             <StatsInfo />
             <AgentEditable />
         </ContextProvider<CharacterContext>>
-
+        </div>
     }
 }
 

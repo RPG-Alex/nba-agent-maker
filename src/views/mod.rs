@@ -45,7 +45,7 @@ pub(crate) fn AgentEditable() -> Html {
 
 
     html! {
-        <div>
+        <div id="editable">
         {
             if character.editable {
                 html!(
