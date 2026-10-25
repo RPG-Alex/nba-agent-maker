@@ -1,15 +1,19 @@
 use std::str::FromStr;
 
 use web_sys::HtmlInputElement;
-use yew::{Callback, Html, InputEvent, MouseEvent, TargetCast, UseStateHandle, component, html, use_context, use_state};
+use yew::{
+    Callback, Html, InputEvent, MouseEvent, TargetCast, UseStateHandle, component, html,
+    use_context,
+};
 
-use crate::rules::character::{self, Character};
+use crate::rules::character::Character;
 
 pub(crate) mod agent_info;
 pub(crate) mod general_skills;
 pub(crate) mod investigative_abilities;
 pub(crate) mod stats_info;
 
+/// Updates the specified Character field
 pub(crate) fn field_update<Field, F>(
     character_state: UseStateHandle<Character>,
     setter: F,
@@ -38,11 +42,11 @@ pub(crate) fn AgentEditable() -> Html {
     let on_editable_change = {
         let character = character.clone();
         Callback::from(move |_: MouseEvent| {
-        let mut updated = (*character).clone();
-        updated.editable = !updated.editable;
-        character.set(updated);
-    })};
-
+            let mut updated = (*character).clone();
+            updated.editable = !updated.editable;
+            character.set(updated);
+        })
+    };
 
     html! {
         <div id="editable">

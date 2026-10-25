@@ -1,138 +1,264 @@
 use serde::{Deserialize, Serialize};
 
+use self::InvestigativeAbilityName::Intimidation;
+
 #[derive(Clone, Deserialize, Serialize, Debug, PartialEq)]
-pub struct InvestigativeAbility {
-    pub name: String,
-    pub rating: i32,
+pub(crate) struct InvestigativeAbility {
+    pub(crate) name: InvestigativeAbilityName,
+    pub(crate) rating: i32,
 }
 
 impl InvestigativeAbility {
-    pub fn new(name: &str) -> Self {
+    pub(crate) fn new(name: InvestigativeAbilityName) -> Self {
         Self {
-            name: name.to_string(),
+            name: name,
             rating: 0,
         }
     }
-    pub fn freepoint(name: &str) -> Self {
+    pub(crate) fn freepoint(name: InvestigativeAbilityName) -> Self {
         Self {
-            name: name.to_string(),
+            name: name,
             rating: 1,
         }
     }
 }
 
 #[derive(Clone, Deserialize, Serialize, Debug, PartialEq)]
-pub struct LanguagesAbility {
-    pub ability: InvestigativeAbility,
-    pub known_languages: Vec<String>,
+pub(crate) struct LanguagesAbility {
+    pub(crate) ability: InvestigativeAbility,
+    pub(crate) known_languages: Vec<String>,
 }
 
 impl LanguagesAbility {
-    pub fn new() -> Self {
+    pub(crate) fn new() -> Self {
         Self {
-            ability: InvestigativeAbility::new("Languages"),
+            ability: InvestigativeAbility::new(InvestigativeAbilityName::Languages),
             known_languages: vec![],
         }
-    }
-
-    pub fn add_language(&mut self, language: &str) {
-        self.known_languages.push(language.to_string());
-    }
-
-    pub fn remove_language(&mut self, language: &str) {
-        self.known_languages.retain(|l| l != language);
-    }
-
-    pub fn set_languages(&mut self, languages: Vec<String>) {
-        self.known_languages = languages;
     }
 }
 
 #[derive(Clone, Deserialize, Serialize, Debug, PartialEq)]
-pub struct InvestigativeAbilities {
-    pub accounting: InvestigativeAbility,
-    pub archeology: InvestigativeAbility,
-    pub architecture: InvestigativeAbility,
-    pub art_history: InvestigativeAbility,
-    pub astronomy: InvestigativeAbility,
-    pub bullshit_detector: InvestigativeAbility,
-    pub bureaucracy: InvestigativeAbility,
-    pub chemistry: InvestigativeAbility,
-    pub cop_talk: InvestigativeAbility,
-    pub criminology: InvestigativeAbility,
-    pub cryptography: InvestigativeAbility,
-    pub data_recovery: InvestigativeAbility,
-    pub diagnosis: InvestigativeAbility,
-    pub electronic_surveillance: InvestigativeAbility,
-    pub flattery: InvestigativeAbility,
-    pub flirting: InvestigativeAbility,
-    pub forensic_pathology: InvestigativeAbility,
-    pub forgery: InvestigativeAbility,
-    pub high_society: InvestigativeAbility,
-    pub history: InvestigativeAbility,
-    pub human_terrain: InvestigativeAbility,
-    pub interrogation: InvestigativeAbility,
-    pub intimidation: InvestigativeAbility,
-    pub languages: LanguagesAbility,
-    pub law: InvestigativeAbility,
-    pub military_science: InvestigativeAbility,
-    pub negotiation: InvestigativeAbility,
-    pub notice: InvestigativeAbility,
-    pub occult_studies: InvestigativeAbility,
-    pub outdoor_survival: InvestigativeAbility,
-    pub pharmacy: InvestigativeAbility,
-    pub photography: InvestigativeAbility,
-    pub reassurance: InvestigativeAbility,
-    pub research: InvestigativeAbility,
-    pub streetwise: InvestigativeAbility,
-    pub surveillance: InvestigativeAbility,
-    pub tradecraft: InvestigativeAbility,
-    pub traffic_analysis: InvestigativeAbility,
-    pub urban_survival: InvestigativeAbility,
+pub(crate) struct InvestigativeAbilities {
+    pub(crate) accounting: InvestigativeAbility,
+    pub(crate) archeology: InvestigativeAbility,
+    pub(crate) architecture: InvestigativeAbility,
+    pub(crate) art_history: InvestigativeAbility,
+    pub(crate) astronomy: InvestigativeAbility,
+    pub(crate) bullshit_detector: InvestigativeAbility,
+    pub(crate) bureaucracy: InvestigativeAbility,
+    pub(crate) chemistry: InvestigativeAbility,
+    pub(crate) cop_talk: InvestigativeAbility,
+    pub(crate) criminology: InvestigativeAbility,
+    pub(crate) cryptography: InvestigativeAbility,
+    pub(crate) data_recovery: InvestigativeAbility,
+    pub(crate) diagnosis: InvestigativeAbility,
+    pub(crate) electronic_surveillance: InvestigativeAbility,
+    pub(crate) flattery: InvestigativeAbility,
+    pub(crate) flirting: InvestigativeAbility,
+    pub(crate) forensic_pathology: InvestigativeAbility,
+    pub(crate) forgery: InvestigativeAbility,
+    pub(crate) high_society: InvestigativeAbility,
+    pub(crate) history: InvestigativeAbility,
+    pub(crate) human_terrain: InvestigativeAbility,
+    pub(crate) interrogation: InvestigativeAbility,
+    pub(crate) intimidation: InvestigativeAbility,
+    pub(crate) languages: LanguagesAbility,
+    pub(crate) law: InvestigativeAbility,
+    pub(crate) military_science: InvestigativeAbility,
+    pub(crate) negotiation: InvestigativeAbility,
+    pub(crate) notice: InvestigativeAbility,
+    pub(crate) occult_studies: InvestigativeAbility,
+    pub(crate) outdoor_survival: InvestigativeAbility,
+    pub(crate) pharmacy: InvestigativeAbility,
+    pub(crate) photography: InvestigativeAbility,
+    pub(crate) reassurance: InvestigativeAbility,
+    pub(crate) research: InvestigativeAbility,
+    pub(crate) streetwise: InvestigativeAbility,
+    pub(crate) surveillance: InvestigativeAbility,
+    pub(crate) tradecraft: InvestigativeAbility,
+    pub(crate) traffic_analysis: InvestigativeAbility,
+    pub(crate) urban_survival: InvestigativeAbility,
 }
 
 impl InvestigativeAbilities {
-    pub fn new() -> Self {
+    pub(crate) fn new() -> Self {
         Self {
-            accounting: InvestigativeAbility::new("Accounting"),
-            archeology: InvestigativeAbility::new("Archeology"),
-            architecture: InvestigativeAbility::new("Architecture"),
-            art_history: InvestigativeAbility::new("Art History"),
-            astronomy: InvestigativeAbility::new("Astronomy"),
-            bullshit_detector: InvestigativeAbility::new("Bullshit Detector"),
-            bureaucracy: InvestigativeAbility::new("Bureaucracy"),
-            chemistry: InvestigativeAbility::new("Chemistry"),
-            cop_talk: InvestigativeAbility::new("Cop Talk"),
-            criminology: InvestigativeAbility::new("Criminology"),
-            cryptography: InvestigativeAbility::new("Cryptography"),
-            data_recovery: InvestigativeAbility::new("Data Recovery"),
-            diagnosis: InvestigativeAbility::new("Diagnosis"),
-            electronic_surveillance: InvestigativeAbility::new("Electronic Surveillance"),
-            flattery: InvestigativeAbility::new("Flattery"),
-            flirting: InvestigativeAbility::new("Flirting"),
-            forensic_pathology: InvestigativeAbility::new("Forensic Pathology"),
-            forgery: InvestigativeAbility::new("Forgery"),
-            high_society: InvestigativeAbility::new("High Society"),
-            history: InvestigativeAbility::new("History"),
-            human_terrain: InvestigativeAbility::new("Human Terrain"),
-            interrogation: InvestigativeAbility::new("Interrogation"),
-            intimidation: InvestigativeAbility::new("Intimidation"),
+            accounting: InvestigativeAbility::new(InvestigativeAbilityName::Accounting),
+            archeology: InvestigativeAbility::new(InvestigativeAbilityName::Archeology),
+            architecture: InvestigativeAbility::new(InvestigativeAbilityName::Architecture),
+            art_history: InvestigativeAbility::new(InvestigativeAbilityName::ArtHistory),
+            astronomy: InvestigativeAbility::new(InvestigativeAbilityName::Astronomy),
+            bullshit_detector: InvestigativeAbility::new(InvestigativeAbilityName::BullshitDetector),
+            bureaucracy: InvestigativeAbility::new(InvestigativeAbilityName::Bureaucracy),
+            chemistry: InvestigativeAbility::new(InvestigativeAbilityName::Chemistry),
+            cop_talk: InvestigativeAbility::new(InvestigativeAbilityName::CopTalk),
+            criminology: InvestigativeAbility::new(InvestigativeAbilityName::Criminology),
+            cryptography: InvestigativeAbility::new(InvestigativeAbilityName::Cryptography),
+            data_recovery: InvestigativeAbility::new(InvestigativeAbilityName::DataRecovery),
+            diagnosis: InvestigativeAbility::new(InvestigativeAbilityName::Diagnosis),
+            electronic_surveillance: InvestigativeAbility::new(InvestigativeAbilityName::ElectronicSurveillance),
+            flattery: InvestigativeAbility::new(InvestigativeAbilityName::Flattery),
+            flirting: InvestigativeAbility::new(InvestigativeAbilityName::Flirting),
+            forensic_pathology: InvestigativeAbility::new(InvestigativeAbilityName::ForensicPathology),
+            forgery: InvestigativeAbility::new(InvestigativeAbilityName::Forgery),
+            high_society: InvestigativeAbility::new(InvestigativeAbilityName::HighSociety),
+            history: InvestigativeAbility::new(InvestigativeAbilityName::History),
+            human_terrain: InvestigativeAbility::new(InvestigativeAbilityName::HumanTerrain),
+            interrogation: InvestigativeAbility::new(InvestigativeAbilityName::Interrogation),
+            intimidation: InvestigativeAbility::new(Intimidation),
             languages: LanguagesAbility::new(),
-            law: InvestigativeAbility::new("Law"),
-            military_science: InvestigativeAbility::new("Military Science"),
-            negotiation: InvestigativeAbility::new("Negotiation"),
-            notice: InvestigativeAbility::new("Notice"),
-            occult_studies: InvestigativeAbility::new("Occult Studies"),
-            outdoor_survival: InvestigativeAbility::new("Outdoor Survival"),
-            pharmacy: InvestigativeAbility::new("Pharmacy"),
-            photography: InvestigativeAbility::new("Photography"),
-            reassurance: InvestigativeAbility::new("Reassurance"),
-            research: InvestigativeAbility::new("Research"),
-            streetwise: InvestigativeAbility::freepoint("Streetwise"),
-            surveillance: InvestigativeAbility::new("Surveillance"),
-            tradecraft: InvestigativeAbility::freepoint("Tradecraft"),
-            traffic_analysis: InvestigativeAbility::new("Traffic Analysis"),
-            urban_survival: InvestigativeAbility::new("Urban Survival"),
+            law: InvestigativeAbility::new(InvestigativeAbilityName::Law),
+            military_science: InvestigativeAbility::new(InvestigativeAbilityName::MilitaryScience),
+            negotiation: InvestigativeAbility::new(InvestigativeAbilityName::Negotiation),
+            notice: InvestigativeAbility::new(InvestigativeAbilityName::Notice),
+            occult_studies: InvestigativeAbility::new(InvestigativeAbilityName::OccultStudies),
+            outdoor_survival: InvestigativeAbility::new(InvestigativeAbilityName::OutdoorSurvival),
+            pharmacy: InvestigativeAbility::new(InvestigativeAbilityName::Pharmacy),
+            photography: InvestigativeAbility::new(InvestigativeAbilityName::Photography),
+            reassurance: InvestigativeAbility::new(InvestigativeAbilityName::Reassurance),
+            research: InvestigativeAbility::new(InvestigativeAbilityName::Research),
+            streetwise: InvestigativeAbility::freepoint(InvestigativeAbilityName::Streetwise),
+            surveillance: InvestigativeAbility::new(InvestigativeAbilityName::Surveillance),
+            tradecraft: InvestigativeAbility::freepoint(InvestigativeAbilityName::TradeCraft),
+            traffic_analysis: InvestigativeAbility::new(InvestigativeAbilityName::TrafficAnalysis),
+            urban_survival: InvestigativeAbility::new(InvestigativeAbilityName::UrbanSurvival),
+        }
+    }
+}
+
+
+
+#[derive(Clone, Deserialize, Serialize, Debug, Eq, PartialEq)]
+pub(crate) enum InvestigativeAbilityName {
+    Accounting,
+    Archeology,
+    Architecture,
+    ArtHistory,
+    Astronomy,
+    BullshitDetector,
+    Bureaucracy,
+    Chemistry,
+    CopTalk,
+    Criminology,
+    Cryptography,
+    DataRecovery,
+    Diagnosis,
+    ElectronicSurveillance,
+    Flattery,
+    Flirting,
+    ForensicPathology,
+    Forgery,
+    HighSociety,
+    History,
+    HumanTerrain,
+    Interrogation,
+    Intimidation,
+    Languages,
+    Law,
+    MilitaryScience,
+    Negotiation,
+    Notice,
+    OccultStudies,
+    OutdoorSurvival,
+    Pharmacy,
+    Photography,
+    Reassurance,
+    Research,
+    Streetwise,
+    Surveillance,
+    TradeCraft,
+    TrafficAnalysis,
+    UrbanSurvival,
+}
+
+impl InvestigativeAbilityName {
+    pub(crate) fn abilities() -> Vec<InvestigativeAbilityName> {
+            vec![
+            InvestigativeAbilityName::Accounting,
+            InvestigativeAbilityName::Archeology,
+            InvestigativeAbilityName::Architecture,
+            InvestigativeAbilityName::ArtHistory,
+            InvestigativeAbilityName::Astronomy,
+            InvestigativeAbilityName::BullshitDetector,
+            InvestigativeAbilityName::Bureaucracy,
+            InvestigativeAbilityName::Chemistry,
+            InvestigativeAbilityName::CopTalk,
+            InvestigativeAbilityName::Criminology,
+            InvestigativeAbilityName::Cryptography,
+            InvestigativeAbilityName::DataRecovery,
+            InvestigativeAbilityName::Diagnosis,
+            InvestigativeAbilityName::ElectronicSurveillance,
+            InvestigativeAbilityName::Flattery,
+            InvestigativeAbilityName::Flirting,
+            InvestigativeAbilityName::ForensicPathology,
+            InvestigativeAbilityName::Forgery,
+            InvestigativeAbilityName::HighSociety,
+            InvestigativeAbilityName::History,
+            InvestigativeAbilityName::HumanTerrain,
+            InvestigativeAbilityName::Interrogation,
+            InvestigativeAbilityName::Intimidation,
+            InvestigativeAbilityName::Languages,
+            InvestigativeAbilityName::Law,
+            InvestigativeAbilityName::MilitaryScience,
+            InvestigativeAbilityName::Negotiation,
+            InvestigativeAbilityName::Notice,
+            InvestigativeAbilityName::OccultStudies,
+            InvestigativeAbilityName::OutdoorSurvival,
+            InvestigativeAbilityName::Pharmacy,
+            InvestigativeAbilityName::Photography,
+            InvestigativeAbilityName::Reassurance,
+            InvestigativeAbilityName::Research,
+            InvestigativeAbilityName::Streetwise,
+            InvestigativeAbilityName::Surveillance,
+            InvestigativeAbilityName::TradeCraft,
+            InvestigativeAbilityName::TrafficAnalysis,
+            InvestigativeAbilityName::UrbanSurvival,]
+    }
+}
+
+impl core::fmt::Display for InvestigativeAbilityName {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> core::fmt::Result {
+        match self {
+            InvestigativeAbilityName::Accounting => write!(f, "Accounting"),
+            InvestigativeAbilityName::Archeology => write!(f, "Archeology"),
+            InvestigativeAbilityName::Architecture => write!(f, "Architecture"),
+            InvestigativeAbilityName::ArtHistory => write!(f, "Art History"),
+            InvestigativeAbilityName::Astronomy => write!(f, "Astronomy"),
+            InvestigativeAbilityName::BullshitDetector => write!(f, "Bullshit Detector"),
+            InvestigativeAbilityName::Bureaucracy => write!(f, "Bureaucracy"),
+            InvestigativeAbilityName::Chemistry => write!(f, "Chemistry"),
+            InvestigativeAbilityName::CopTalk => write!(f, "Cop Talk"),
+            InvestigativeAbilityName::Criminology => write!(f, "Criminology"),
+            InvestigativeAbilityName::Cryptography => write!(f, "Cryptography"),
+            InvestigativeAbilityName::DataRecovery => write!(f, "Data Recovery"),
+            InvestigativeAbilityName::Diagnosis => write!(f, "Diagnosis"),
+            InvestigativeAbilityName::ElectronicSurveillance => write!(f, "Electronic Survival"),
+            InvestigativeAbilityName::Flattery => write!(f, "Flattery"),
+            InvestigativeAbilityName::Flirting => write!(f, "Flirting"),
+            InvestigativeAbilityName::ForensicPathology => write!(f, "Forensic Pathology"),
+            InvestigativeAbilityName::Forgery => write!(f, "Forgery"),
+            InvestigativeAbilityName::HighSociety => write!(f, "High Society"),
+            InvestigativeAbilityName::History => write!(f, "History"),
+            InvestigativeAbilityName::HumanTerrain => write!(f, "Human Terrain"),
+            InvestigativeAbilityName::Interrogation => write!(f, "Interrogation"),
+            InvestigativeAbilityName::Intimidation => write!(f, "Intimidation"),
+            InvestigativeAbilityName::Languages => write!(f, "Languages"),
+            InvestigativeAbilityName::Law => write!(f, "Law"),
+            InvestigativeAbilityName::MilitaryScience => write!(f, "Military Science"),
+            InvestigativeAbilityName::Negotiation => write!(f, "Negotiation"),
+            InvestigativeAbilityName::Notice => write!(f, "Notice"),
+            InvestigativeAbilityName::OccultStudies => write!(f, "Occult Studies"),
+            InvestigativeAbilityName::OutdoorSurvival => write!(f, "Outdoor Survival"),
+            InvestigativeAbilityName::Pharmacy => write!(f, "Pharmacy"),
+            InvestigativeAbilityName::Photography => write!(f, "Photography"),
+            InvestigativeAbilityName::Reassurance => write!(f, "Reassurance"),
+            InvestigativeAbilityName::Research => write!(f, "Research"),
+            InvestigativeAbilityName::Streetwise => write!(f, "Streetwise"),
+            InvestigativeAbilityName::Surveillance => write!(f, "Surveillance"),
+            InvestigativeAbilityName::TradeCraft => write!(f, "Trade Craft"),
+            InvestigativeAbilityName::TrafficAnalysis => write!(f, "Traffic Analysis"),
+            InvestigativeAbilityName::UrbanSurvival => write!(f, "Urban Survival"),
         }
     }
 }
