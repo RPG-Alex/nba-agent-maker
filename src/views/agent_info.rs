@@ -8,21 +8,8 @@ use crate::{
 
 #[component]
 pub(crate) fn AgentInfo() -> Html {
-    let drives = get_drives();
     let character =
         use_context::<UseStateHandle<Character>>().expect("Character context not found");
-
-    let on_role_input = Callback::from(move |event: InputEvent| {});
-
-    let on_background_input = Callback::from(move |event: InputEvent| {});
-
-    let on_investigative_points_input = Callback::from(move |event: InputEvent| {});
-
-    let on_general_points_input = Callback::from(move |event: InputEvent| {});
-
-    let on_agent_info_update = Callback::from(move |event: InputEvent| {});
-
-    let agent_info_editable = use_state(|| false);
 
     html! {
         <section id="agent-info">
@@ -107,5 +94,28 @@ fn HandlerField() -> Html {
 
 #[component]
 fn BackgroundInput() -> Html {
-    html!()
+        let character =
+        use_context::<UseStateHandle<Character>>().expect("Character context not found");
+
+    let on_background_input = field_update(character.clone(), |character, value: String| {
+        character.background = value;
+    });
+    html!(
+        <div id="background">
+                    <label for="background">{"Background: "}</label>
+                {
+                    if character.editable {
+                        html!(
+                            <input type="text" id="background" value={character.background.clone()} oninput={on_background_input} />
+                        )
+                    } else {
+                        html!(
+                            <span id="background">
+                            {&character.background}
+                            </span>
+                        )
+                    }
+                }
+        </div>
+    )
 }
