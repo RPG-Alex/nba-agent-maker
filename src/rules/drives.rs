@@ -38,7 +38,8 @@ impl Drive {
     Self::Collector,
     ]
     }
-    pub(crate) fn description(&self) -> &'static str {
+
+    pub(crate) fn description(&self, modes: &[GameMode]) -> &'static str {
         match self {
             Drive::Altruism => todo!(),
             Drive::Atonement => todo!(),
@@ -56,6 +57,16 @@ impl Drive {
             Drive::Collector => todo!(),
         }
     }
+
+    pub(crate) fn altruism_description(&self, modes: &[GameMode]) -> String {
+        let mut description = String::from("You got into the game to protect innocents from terrorists, or disease, or war, or tyranny. You’re no innocent yourself now, but that only lets you know just how much innocence normal people have left to lose. Without a necessarily compromised agency telling you what to do, doing the right thing becomes not just easier, but imperative.");
+        if modes.contains(&GameMode::Mirror) {
+            description.push_str("Is another agent acting from shadier motives? Perhaps doing the right thing isn’t what everyone wants to do today.");
+        }
+
+        description
+    }
+
     pub(crate) fn game_modes(&self) -> &'static [GameMode] {
         match self {
             Self::Altruism | Self::Atonement => &[

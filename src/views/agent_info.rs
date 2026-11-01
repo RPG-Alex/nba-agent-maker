@@ -2,7 +2,7 @@ use yew::prelude::*;
 
 use crate::{
     rules::{
-        character::{self, Character}, drives::get_drives,
+        backgrounds::{self, Background}, character::{self, Character},
     }, views::field_update,
 };
 
@@ -31,6 +31,7 @@ pub(crate) fn AgentInfo() -> Html {
         }
         <NameField />
         <HandlerField />
+        <BackgroundInput />
         </section>
     }
 }
@@ -94,24 +95,35 @@ fn HandlerField() -> Html {
 
 #[component]
 fn BackgroundInput() -> Html {
-        let character =
+    let character =
         use_context::<UseStateHandle<Character>>().expect("Character context not found");
 
-    let on_background_input = field_update(character.clone(), |character, value: String| {
-        character.background = value;
-    });
+    let backgrounds = Background::backgrounds();
+
+    // let on_background_input = field_update(character.clone(), |character, value: String| {
+    //     character.background = value;
+    // });
     html!(
         <div id="background">
                     <label for="background">{"Background: "}</label>
                 {
                     if character.editable {
                         html!(
-                            <input type="text" id="background" value={character.background.clone()} oninput={on_background_input} />
+                            <select id="background">
+                                {
+                                    for backgrounds.iter().map(|background| {
+                                        html!(
+                                            <option value={background.to_string()}>{background.to_string()}</option>
+                                        )
+                                    })
+                                }
+                                <option value="custom">{"Custom"}</option>
+                            </select>
                         )
                     } else {
                         html!(
                             <span id="background">
-                            {&character.background}
+                            
                             </span>
                         )
                     }

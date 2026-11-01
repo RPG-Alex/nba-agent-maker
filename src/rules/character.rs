@@ -4,6 +4,8 @@ use crate::rules::{
     modes::GameMode,
 };
 use serde::{Deserialize, Serialize};
+
+use super::backgrounds::Backgrounds;
 #[derive(Clone, PartialEq)]
 pub(crate) struct MOS;
 
@@ -20,7 +22,7 @@ pub(crate) struct Character {
     pub(crate) drive: String,
     pub(crate) handler: String,
     pub(crate) professional_role: String,
-    pub(crate) background: String,
+    pub(crate) backgrounds: Backgrounds,
     pub(crate) symbol: String,
     pub(crate) solace: String,
     pub(crate) safety: String,
@@ -66,7 +68,7 @@ impl Default for Character {
             drive: String::new(),
             handler: String::new(),
             professional_role: String::new(),
-            background: String::new(),
+            backgrounds: Backgrounds::new(),
             symbol: String::new(),
             solace: String::new(),
             safety: String::new(),

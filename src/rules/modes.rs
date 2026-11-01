@@ -2,7 +2,7 @@ use core::fmt::{self, Display};
 
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Default, Clone, Copy, Debug, PartialEq)]
+#[derive(Serialize, Deserialize, Default, Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GameMode {
     #[default]
     Base, // base game
