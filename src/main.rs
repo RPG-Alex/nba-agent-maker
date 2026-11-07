@@ -1,5 +1,6 @@
 mod rules;
 mod views;
+mod error;
 
 use gloo_storage::{LocalStorage, Storage};
 use rules::character::Character;

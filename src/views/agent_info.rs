@@ -100,9 +100,9 @@ fn BackgroundInput() -> Html {
 
     let backgrounds = Background::backgrounds();
 
-    // let on_background_input = field_update(character.clone(), |character, value: String| {
-    //     character.background = value;
-    // });
+    let on_background_input = field_update(character.clone(), |character, value: Background| {
+        character.backgrounds.push(value);
+    });
     html!(
         <div id="background">
                     <label for="background">{"Background: "}</label>
