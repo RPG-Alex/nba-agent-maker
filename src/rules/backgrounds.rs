@@ -13,20 +13,42 @@ pub(crate) struct Background {
     pub(crate) description: String,
     pub(crate) examples: Vec<String>,
     pub(crate) investigative_point_buys: Vec<InvestigativePointBuy>,
-    pub(crate) investigative_alternatives: Vec<InvestigativeAbilityName>,
     pub(crate) general_point_buys: Vec<GeneralPointBuy>,
-    pub(crate) general_alternatives: Vec<GeneralSkillName>,
+}
+
+impl FromStr for Background {
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s {
+"Analyst" => Self::analyst(),
+"AssetHandler" => Self::asset_handler(),
+"Bagman" => Self::bagman(),
+"BangAndBurner" => Self::bang_and_burner(),
+"BlackBagger" => Self::black_bagger(),
+"Cleaner" => Self::cleaner(),
+"Cobbler" => Self::cobbler(),
+"Cuckoo" => Self::cuckoo(),
+"Hacker" => Self::hacker(),
+"Investigator" => Self::investigator(),
+"Medic" => Self::medic(),
+"Mule" => Self::mule(),
+"Muscle" => Self::muscle(),
+"Watcher" => Self::watcher(),
+"WetWorker" => Self::wet_worker(),
+"WheelArtist" => Self::wheel_artist(),
+"WireRat" => Self::wire_rate(),
+string => Self::custom(string),
+        }
+    }
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub(crate) struct InvestigativePointBuy {
     pub(crate) skill: InvestigativeAbilityName,
     pub(crate) points: u8,
-    pub(crate) alternative_skill_choice: Option<InvestigativeAbilityName>,
 }
 impl InvestigativePointBuy {
-    pub(crate) fn new(skill: InvestigativeAbilityName, points: u8, alternative_skill_choice: Option<InvestigativeAbilityName>) -> Self {
-        Self { skill, points, alternative_skill_choice }
+    pub(crate) fn new(skill: InvestigativeAbilityName, points: u8) -> Self {
+        Self { skill, points }
     }
 }
 
@@ -34,12 +56,11 @@ impl InvestigativePointBuy {
 pub(crate) struct GeneralPointBuy {
     pub(crate) skill: GeneralSkillName,
     pub(crate) points: u8,
-    pub(crate) alternative_skill_choice: Option<GeneralSkillName>,
 }
 
 impl GeneralPointBuy {
-    pub(crate) fn new(skill: GeneralSkillName, points: u8, alternative_skill_choice: Option<GeneralSkillName>) -> Self {
-        Self { skill, points, alternative_skill_choice }
+    pub(crate) fn new(skill: GeneralSkillName, points: u8, ) -> Self {
+        Self { skill, points }
     }
 }
 
