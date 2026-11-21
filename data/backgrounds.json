@@ -1,0 +1,37 @@
+{
+    "analyst" : {
+        "description": "Almost all modern spy work involves sifting through the immense amount of data available to come to some kind of useful conclusion. Much of this information isn’t classified or stolen, or even picked up by spy satellites: newspapers, periodicals, and the Internet provide oceans of raw open-source intelligence (OSINT) that a good analyst can turn into useful product for his government. An analyst might also work for a university, newspaper, or strategic-studies think tank, either under cover or simply providing government- quality intelligence to the private sector. Analysts have good minds for pattern matching; this might manifest in mathematical ability, musical creativity, or just low-level paranoia.",
+    "examples": [
+        "MI5 threat analyst", 
+        "Deutsche Bank econometrician", 
+        "European Parliament staffer", 
+        "deputy CIA station chief", 
+        "journalist for Dagens Nyheter", 
+        "French Air Force operational analyst"
+    ],
+        "investigative" : {
+            "data recover": "1",
+            "languages": "2",
+            "research": "1",
+            "traffic analysis":"2",
+            "alternates" : [
+                "accounting",
+                "bureaucracy",
+                "criminology",
+                "history",
+                "human terrain",
+                "military science"
+            ]
+        },
+        "general" : {
+            "digital intrusion" : "2",
+            "network" : "5",
+            "preparedness": "4",
+            "sense trouble" : "5",
+            "surveillance" : "3",
+            "alternates" : [
+                "gambling"
+            ]
+        }
+    }
+}

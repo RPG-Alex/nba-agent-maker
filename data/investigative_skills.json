@@ -1,0 +1,47 @@
+{
+  "academic" : {
+    "Accounting" : "",
+    "Archaeology" : "",
+    "Architecture" : "",
+    "Art History" : "",
+    "Criminology" : "",
+    "Diagnosis" : "",
+    "History" : "",
+    "Human Terrain" : "",
+    "Languages" : "",
+    "Law" : "",
+    "Military Science" : "",
+    "Occult Studies" : "",
+    "Research" : "",
+    "Vampirology" : ""
+  },
+    "interpersonal" : {
+        "Bullshit Detector" : "",
+        "Bureaucracy" : "",
+        "Cop Talk" : "",
+        "Flattery" : "",
+        "Flirting" : "",
+        "High Society" : "",
+        "Interrogation" : "",
+        "Intimidation" : "",
+        "Negotiation" : "",
+        "Reassurance" : "",
+        "Streetwise" : "",
+        "Tradecraft" : ""
+    },
+    "technical" : {
+        "Astronomy" : "",
+        "Chemistry" : "",
+        "Cryptography" : "",
+        "Data Recovery" : "",
+        "Electronic Surveillance" : "",
+        "Forensic Pathology" : "",
+        "Forgery" : "",
+        "Notice" : "",
+        "Outdoor Survival" : "",
+        "Pharmacy" : "",
+        "Photography" : "",
+        "Traffic Analysis" : "",
+        "Urban Survival" : ""
+    }
+}
