@@ -1,14 +1,14 @@
 {
     "analyst" : {
         "description": "Almost all modern spy work involves sifting through the immense amount of data available to come to some kind of useful conclusion. Much of this information isn’t classified or stolen, or even picked up by spy satellites: newspapers, periodicals, and the Internet provide oceans of raw open-source intelligence (OSINT) that a good analyst can turn into useful product for his government. An analyst might also work for a university, newspaper, or strategic-studies think tank, either under cover or simply providing government- quality intelligence to the private sector. Analysts have good minds for pattern matching; this might manifest in mathematical ability, musical creativity, or just low-level paranoia.",
-    "examples": [
-        "MI5 threat analyst", 
-        "Deutsche Bank econometrician", 
-        "European Parliament staffer", 
-        "deputy CIA station chief", 
-        "journalist for Dagens Nyheter", 
-        "French Air Force operational analyst"
-    ],
+        "examples": [
+            "MI5 threat analyst", 
+            "Deutsche Bank econometrician", 
+            "European Parliament staffer", 
+            "deputy CIA station chief", 
+            "journalist for Dagens Nyheter", 
+            "French Air Force operational analyst"
+        ],
         "investigative" : {
             "data recover": "1",
             "languages": "2",
@@ -31,6 +31,37 @@
             "surveillance" : "3",
             "alternates" : [
                 "gambling"
+            ]
+        }
+    },
+    "asset handler" : {
+        "description" : "Intelligence agencies get human intelligence (HUMINT) from all manner of sources, willing and coerced, knowing and duped. These sources are called “assets,” and the agent who keeps them all supplying intel is their “runner” or “handler.”Asset handlers have to juggle carrots and sticks, avoid getting involved with their assets’ lives while solving their problems, and always keep an eye out for more potential recruits. Since they actually have to meet their assets on occasion, they have to be better than average at avoiding surveillance.",
+        "examples" : [
+            "CIA/MI6 Case Officer",
+            "SVR 'Journalist' under cover",
+            "Italian ROS Major running Mafia snitches",
+            "French DRM intelligence monitoring warlord activity in Bosnia"
+        ],
+        "investigative" : {
+            "bullshit detector" : "2",
+            "intimidation" : "2",
+            "negotiation" : "1",
+            "reassurance" : "1",
+            "alternates" : [
+                "flattery",
+                "flirting",
+                "human terrain",
+                "trade craft"
+            ]
+        },
+        "general" : {
+            "cover" : "3",
+            "sense trouble" : "5",
+            "shrink" : "4",
+            "surveillance" : "6",
+            "alternates" : [
+                "conceal",
+                "disguise"
             ]
         }
     }
