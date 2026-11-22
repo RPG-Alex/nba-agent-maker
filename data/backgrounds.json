@@ -51,7 +51,7 @@
                 "flattery",
                 "flirting",
                 "human terrain",
-                "trade craft"
+                "tradecraft"
             ]
         },
         "general" : {
@@ -62,6 +62,452 @@
             "alternates" : [
                 "conceal",
                 "disguise"
+            ]
+        }
+    },
+    "bagman" : {
+        "description" : "In the immortal words of Deep Throat, “Follow the money.” Clandestine operations and criminal organizations both depend on flows of untraceable cash, either electronically or in the good old-fashioned metal briefcase. Either way, the bagman’s watchwords are “keep it secret, keep it safe.”",
+        "examples" : [
+            "Iranian VEVAK terrorist paymaster",
+            "American OTFI agent monitoring SWIFT transactions in Switzerland",
+            "FSB obshchak (book keeper) collecting tribute from Russian mafiya rings",
+            "Camorra money laundering in Monaco"
+        ],
+        "investigative" : {
+            "accounting" : "2",
+            "bullshit detector": "2",
+            "intimidation" : "1",
+            "negotiation" : "1",
+            "alternates" : [
+                "data recovery"
+            ]
+        },
+        "general" : {
+            "conceal" : "4",
+            "digital intrusion" : "3",
+            "sense trouble" : "6",
+            "surveillance" : "5",
+            "alternates" : [
+                "disguise"
+            ]
+        }
+    },
+    "bang-and-burner": {
+        "description": "“Bang and burn” jobs involve sabotage, usually through demolitions or arson. This skill set translates with unnerving ease to EOD (explosive ordnance disposal) and arson investigation. Bang-and-burners set and disarm everything from booby traps to car bombs to ship-scuttling charges.",
+        "examples": [
+            "IRA or ETA bomb-builder",
+            "Albanian mafia arsonist",
+            "Polish Army combat engineer",
+            "Special Branch bomb disposal expert"
+        ],
+        "investigative": {
+            "architecture": "2",
+            "chemistry": "2",
+            "criminology": "1",
+            "intimidation": "1",
+            "alternates": []
+        },
+        "general": {
+            "conceal": "4",
+            "explosive devices": "8",
+            "infiltration": "2",
+            "mechanics": "4",
+            "alternates": []
+        }
+    },
+    "black bagger": {
+        "description": "A “black bag job” is FBI slang for a breaking-and-entry intrusion, usually intended to copy (or steal) documents or plant bugs or wiretaps. British spies often call break-in artists “box men,” a term originating in Victorian criminal slang. By any name, it’s burglary.",
+        "examples": [
+            "Cat burglar on the Riviera",
+            "Bundespolizei museum security specialist",
+            "DGSE or Mossad covert entry specialist",
+            "NSA contractor"
+        ],
+        "investigative": {
+            "data recovery": "1",
+            "electronic surveillance": "2",
+            "photography": "2",
+            "streetwise": "1",
+            "alternates": [
+                "architecture",
+                "notice"
+            ]
+        },
+        "general": {
+            "conceal": "2",
+            "digital intrusion": "2",
+            "filch": "6",
+            "infiltration": "8",
+            "alternates": [
+                "preparedness"
+            ]
+        }
+    },
+    "cleaner": {
+        "description": "The cleaner removes evidence of covert activity from the scene. Sometimes that evidence is just fingerprints or surveillance tapes; sometimes, it’s bloodstains or corpses. This Background, especially, combines well with others; it’s a good, useful skill set for any covert operative. A cleaner’s abilities also come in handy when removing a living person from the scene, either willingly or involuntarily in “hostile extractions.”",
+        "examples": [
+            "FSB mole in the Interior Ministry",
+            "Special Branch security operative",
+            "Camorra-connected trucking supervisor in Naples",
+            "Bulgarian NIS officer handling “renditions” for the CIA"
+        ],
+        "investigative": {
+            "bureaucracy": "2",
+            "cop talk": "1",
+            "criminology": "2",
+            "urban survival": "1",
+            "alternates": [
+                "chemistry",
+                "data recovery",
+                "electronic surveillance",
+                "notice",
+                "streetwise"
+            ]
+        },
+        "general": {
+            "conceal": "6",
+            "disguise": "2",
+            "driving": "4",
+            "explosive devices": "2",
+            "infiltration": "2",
+            "stability": "2",
+            "alternates": [
+                "digital intrusion"
+            ]
+        }
+    },
+    "cobbler": {
+        "description": "In British spy lingo, the cobbler makes “shoes” — false passports, visas, identity documents, and so forth. In an increasingly digital age, it’s good to see solid hand-craftsmanship rewarded. These abilities also point toward counterfeiting, or any sort of image or document manipulation, as well as toward stopping such behaviors.",
+        "examples": [
+            "MI6 or SVR documentation expert",
+            "Nigerian facilitator for human traffickers",
+            "Interpol document-security officer",
+            "Italian Guardia di Finanza customs inspector"
+        ],
+        "investigative": {
+            "bureaucracy": "1",
+            "forgery": "4",
+            "photography": "1",
+            "alternates": [
+                "cryptography"
+            ]
+        },
+        "general": {
+            "cover": "6",
+            "digital intrusion": "4",
+            "disguise": "2",
+            "infiltration": "4",
+            "mechanics": "2",
+            "alternates": []
+        }
+    },
+    "cuckoo": {
+        "description": "The cuckoo lays its eggs in another bird’s nest, convincing the stranger to raise its chicks. Agents with this Background specialize in social infiltration; they may be “face men,” long-con grifters, or former moles or sleepers planted in an enemy agency or society by their patron. This Background blends very well with Asset Handler.",
+        "examples": [
+            "CIA deep cover agent of influence",
+            "SVR “swallow” trained to lure Western men into “honey traps”",
+            "BND-sponsored journalist",
+            "Iranian VEVAK agent monitoring dissident expats",
+            "scoundrel preying on lonely hearts in the Greek islands",
+            "MI6 “talent spotter” looking for foreign targets vulnerable to blackmail or recruitment"
+        ],
+        "investigative": {
+            "flattery": "2",
+            "high society": "2",
+            "reassurance": "2",
+            "alternates": [
+            	"flirting",
+                "human terrain",
+                "streetwise"
+            ]
+        },
+        "general": {
+            "cover": "3",
+            "disguise": "8",
+            "filch": "2",
+            "gambling": "3",
+            "sense trouble": "2",
+            "alternates": []
+        }
+    },
+    "hacker": {
+        "description": "The 21st-century box man does his breaking and entering over fiberoptic cable and wireless networks. A clandestine-ops hacker alters data as well as steals it, suborning systems rather than crashing them. Real-world hacking depends at least as much on social engineering — working on human weaknesses — as it does on cybernetic savvy and l337 coding skillz. This Background combines particularly well with the Analyst, the Black Bagger, or the Wire Rat.",
+        "examples": [
+            "Ukrainian industrial-espionage contractor",
+            "GCHQ codes-and-signals “wrangler”",
+            "Swiss bank financial security specialist",
+            "IDF Unit 8200 cyberwarfare programmer",
+            "freelance American computer security specialist"
+        ],
+        "investigative": {
+            "data recovery": "2",
+            "electronic surveillance": "2",
+            "traffic analysis": "1",
+            "urban survival": "1",
+            "alternates": [
+                "accounting",
+                "bureaucracy",
+                "forgery",
+                "human terrain",
+                "reassurance"
+            ]
+        },
+        "general": {
+            "digital intrusion": "10",
+            "disguise": "2",
+            "infiltration": "2",
+            "mechanics": "4",
+            "alternates": [
+                "network"
+            ]
+        }
+    },
+    "investigator": {
+        "description": "This is the straightforward, meat-and-potatoes sort of agent: given a problem, he tries to solve it. Sometimes that involves calling in the law or backup; sometimes it involves calling in a wet worker to “resolve” it; sometimes it involves calling in a Predator drone to really, really “resolve” it. Many investigators are reactive rather than proactive: counter-terror, counter-intelligence, counter-organized crime.",
+        "examples": [
+            "MI5 or FSB field agent",
+            "French National Police inspector",
+            "Italian special anti-Mafia magistrate’s officer",
+            "Triad fixer"
+        ],
+        "investigative": {
+            "bureaucracy": "1",
+            "cop talk": "1",
+            "interrogation": "1",
+            "law": "1",
+            "notice": "2",
+            "alternates": [
+                "criminology",
+                "intimidation",
+                "streetwise"
+            ]
+        },
+        "general": {
+            "disguise": "2",
+            "hand-to-hand": "6",
+            "infiltration": "2",
+            "sense trouble": "2",
+            "surveillance": "6",
+            "alternates": [
+                "athletics",
+                "driving",
+                "shooting"
+            ]
+        }
+    },
+    "medic": {
+        "description": "It’s not just about the healing, although it’s mostly about that. It’s also about the truth serum administering, or the talking agents out of (or into) collapsing, or the spotting viral-biological threats before they hit the headlines, or the figuring out just what killed all those Triad thugs.",
+        "examples": [
+            "Scotland Yard forensic pathologist",
+            "CIA “shrinker” or MI6 “inquisitor”",
+            "GSG 9 trauma medic",
+            "Paris or Naples EMT",
+            "US Navy corpsman",
+            "WHO or Médecins Sans Frontières hematologist",
+            "Russian Army biological warfare specialist"
+        ],
+        "investigative": {
+            "bullshit detector": "1",
+            "chemistry": "1",
+            "diagnosis": "1",
+            "forensic pathology": "1",
+            "interrogation": "1",
+            "pharmacy": "1",
+            "alternates": [
+                "human terrain",
+                "languages",
+                "reassurance"
+            ]
+        },
+        "general": {
+            "medic": "10",
+            "shrink": "8",
+            "alternates": [
+                "driving",
+                "health",
+                "stability"
+            ]
+        }
+    },
+    "mule": {
+        "description": "A mule specializes in taking things from one side of a border to another: drugs, girls, fellow agents, antiquities, defectors, stolen cars, a mysterious silver briefcase, you name it. Many mules are part of a long family line of smugglers, especially in the clan-riven Balkans and Middle East; others are part of a wide network of criminals organized along vaguely ethnic lines. Still others work for specific agencies at specific border crossings; a few have good enough cover to get them across multiple borders multiple times. This Background combines well with Watcher to create a “tourist” or “lamplighter,” a long-term surveillance artist assigned to a highly mobile, high-value target.",
+        "examples": [
+            "Serbian human trafficker for the Naša Stvar",
+            "bent Spanish SVA customs officer",
+            "Israeli mafia Ecstasy smuggler",
+            "SVR “oil engineer” under commercial cover",
+            "bent Louvre art restorer",
+            "MI6 “bride” courier taking documents to an agent in a denied area"
+        ],
+        "investigative": {
+            "bureaucracy": "1",
+            "forgery": "1",
+            "negotiation": "2",
+            "outdoor survival or urban survival": "1",
+            "streetwise": "1",
+            "alternates": [
+                "archaeology",
+                "art history"
+            ]
+        },
+        "general": {
+            "conceal": "8",
+            "driving": "4",
+            "piloting": "2",
+            "surveillance": "4",
+            "alternates": [
+                "cover"
+            ]
+        }
+    },
+    "muscle": {
+        "description": "Security and intelligence agencies usually use ex-military types for bodyguarding, general guarding, and the occasional “put the fear of Sarkozy into them” type mission, or to run interference on ops where the other side will be heavily armed and ready to throw down. Military intelligence agencies don’t even have to go as far as ex-military types.",
+        "examples": [
+            "GRU or Carabineri NCO",
+            "ex-Bundeswehr mercenary in Bosnia",
+            "ex-Spetsnaz bodyguard for the Tverskaya Bratva",
+            "DGSE “Active”",
+            "MI6 “scalphunter”",
+            "CIA paramilitary asset",
+            "FSB “nursemaid” for potential defectors"
+        ],
+        "investigative": {
+            "interrogation": "1",
+            "intimidation": "1",
+            "military science": "2",
+            "outdoor survival": "2",
+            "alternates": [
+            	"urban survival"
+            ]
+        },
+        "general": {
+            "athletics": "6",
+            "hand-to-hand": "8",
+            "shooting or weapons": "4",
+            "alternates": [
+                "explosive devices",
+                "sense trouble"
+            ]
+        }
+    },
+    "watcher": {
+        "description": "Also called an “eyeball,” a watcher usually comes out of counter-intelligence, and specializes in surveillance. Although electronic options are ever improving, the integrated system of shoe leather and retina still works more reliably and flexibly than any other. Watchers hang out in the generic-looking van down the street, maintain foot or rolling coverage, set up “picket coverage” to monitor choke points, and ideally keep the target in a “floating box” with watchers on all sides. This background cross-trains well with Muscle, amplifies Wire Rat or Investigator, and (added to Wet Worker) makes a good cinematic assassin.",
+        "examples": [
+            "MI5 or FSB “pavement artists”",
+            "Camorra “nightingale” lookout",
+            "Cannes or Berlin paparazzo",
+            "private detective"
+        ],
+        "investigative": {
+            "electronic surveillance": "1",
+            "notice": "1",
+            "photography": "2",
+            "tradecraft": "1",
+            "urban survival": "1",
+            "alternates": [
+                "architecture",
+                "human terrain",
+                "streetwise",
+                "traffic analysis"
+            ]
+        },
+        "general": {
+            "disguise": "2",
+            "infiltration": "2",
+            "driving": "4",
+            "surveillance": "10",
+            "alternates": [
+                "athletics",
+                "conceal",
+                "digital intrusion"
+            ]
+        }
+    },
+    "wet worker": {
+        "description": "The charmers in the KGB’s old Special Bureau 13 coined the term mokroye delo (“wet work”) to refer to assassinations. Neither the term nor the task is exclusive to the Russians: even agencies legally restricted from carrying out assassinations and executive murders hire plausibly deniable cut-outs to do it for them.",
+        "examples": [
+            "GSG 9 sniper",
+            "FSB or Mossad assassin",
+            "Camorra hit man",
+            "IRA “hard boy”"
+        ],
+        "investigative": {
+            "intimidation": "2",
+            "streetwise": "2",
+            "urban survival": "2",
+            "alternates": [
+                "criminology",
+                "electronic surveillance",
+                "photography"
+            ]
+        },
+        "general": {
+            "shooting or weapons": "10",
+            "hand-to-hand": "4",
+            "surveillance": "4",
+            "alternates": [
+                "disguise",
+                "explosive devices",
+                "infiltration",
+                "special weapons training"
+            ]
+        }
+    },
+    "wheel artist": {
+        "description": "Defensive, security, and stunt driving courses are not entirely uncommon, in Europe or America. Europe also has thriving motor sports, film, and kidnapping industries, all of which produce excellent drivers. While the dedicated “wheel man” is more usual in criminal conspiracies than intelligence ops, clandestine missions likewise depend on speedy exits when they don’t go entirely as planned. This Background is a double threat with Watcher or Mule.",
+        "examples": [
+            "Union Corse car thief",
+            "DGSE “Action Division” driver",
+            "U.S. Diplomatic Security driver",
+            "Deutsche Bank-provided chauffeur"
+        ],
+        "investigative": {
+            "cop talk": "2",
+            "streetwise": "2",
+            "urban survival": "2",
+            "alternates": [
+                "electronic surveillance"
+            ]
+        },
+        "general": {
+            "driving": "10",
+            "mechanics": "4",
+            "piloting": "4",
+            "alternates": [
+                "sense trouble",
+                "surveillance"
+            ]
+        }
+    },
+    "wire rat": {
+        "description": "In the clandestine world technical experts, as distinct from hackers, are almost always “nuts and bolts” electronics specialists, with a side of metal shop. Building bugs or guns into innocuous objects is another wire rat specialty in spy thrillers, as is general gadgeteering. This Background works well not only combined with the Hacker but with the Black Bagger: cutting alarms and cameras is the first half of breaking and entering. It supercharges Bang-and-Burners and Watchers.",
+        "examples": [
+            "GRU or DGSE comms expert",
+            "Interpol security systems consultant",
+            "Metropolitan Police CCTV installer",
+            "MI6 bug-sweeping “ferret”",
+            "Mossad technical services officer",
+            "USIA radio engineer"
+        ],
+        "investigative": {
+            "chemistry": "1",
+            "data recovery": "2",
+            "electronic surveillance": "2",
+            "notice": "1",
+            "alternates": [
+                "architecture",
+                "photography"
+            ]
+        },
+        "general": {
+            "conceal": "3",
+            "digital intrusion": "2",
+            "infiltration": "2",
+            "mechanics": "6",
+            "preparedness": "5",
+            "alternates": [
+                "explosive devices",
+                "surveillance"
             ]
         }
     }
